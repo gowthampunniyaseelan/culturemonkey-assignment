@@ -8,8 +8,8 @@ app.use(cors());
 const port = process.env.PORT || 8080
 
 // DB
-const CompanyModel = require("../database/models/company")
-const UserModel = require("../database/models/user")
+const CompanyModel = require("./src/database/models/company")
+const UserModel = require("./src/database/models/user")
 mongoose.connect(process.env.MONGODB_URI,{
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -19,17 +19,13 @@ mongoose.connect(process.env.MONGODB_URI,{
   console.log("DB CONNECTION ERROR",err);
 })
 
-// app
+const companyRoutes = require("./src/routes/company")
+// const userRoutes = require("./src/routes/user")
+
 app.listen(port,()=>{
   console.log(`Port listening on ${port}`);
 })
 
-app.post("/company-management",(req,res)=>{
-  const companyModels = new CompanyModel(req.body)
-  companyModels.save()
+app.use("/company-management",companyRoutes)
 
-})
-
-app.post("/user-management",(req,res)=>{
-
-})
+// app.use("/user-management",userRoutes)

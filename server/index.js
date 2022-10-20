@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI,{
 })
 
 const companyRoutes = require("./src/routes/company")
-// const userRoutes = require("./src/routes/user")
+const userRoutes = require("./src/routes/user")
 
 app.listen(port,()=>{
   console.log(`Port listening on ${port}`);
@@ -28,4 +28,4 @@ app.listen(port,()=>{
 
 app.use("/company-management",companyRoutes)
 
-// app.use("/user-management",userRoutes)
+app.use("/user-management",userRoutes)

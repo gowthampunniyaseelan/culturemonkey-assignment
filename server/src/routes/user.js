@@ -1,8 +1,11 @@
-// const express = require("express")
-// const router = express.Router()
-// const addUser = require("../controllers/addUser")
+const express = require("express")
+const router = express.Router()
+const generateUserListView = require("../controllers/user/generateUserListView")
+const getUser = require("../controllers/user/getUser")
+const updateUser = require("../controllers/user/updateUser")
+// User
+router.get("/user-details/users",generateUserListView)
+router.get("/user-details/users/:id",getUser)
+router.put("/user-details/users/:id",updateUser)
 
-// // User
-// router.put("/users",addUser)
-
-// module.exports = router
+module.exports = router

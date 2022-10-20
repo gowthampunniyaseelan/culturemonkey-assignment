@@ -9,6 +9,7 @@ import DeleteCompany from "./components/company/DeleteCompany";
 import GenerateUserListView from "./components/user/GenerateUserListView";
 import GetUser from "./components/user/GetUser";
 import UpdateUser from "./components/user/UpdateUser";
+import Migrate from "./components/company/Migrate";
 function App() {
   return(
     <>
@@ -22,6 +23,7 @@ function App() {
     <GenerateUserListView/>
     <GetUser/>
     <UpdateUser/>
+    <Migrate/>
     </>
   );
 }

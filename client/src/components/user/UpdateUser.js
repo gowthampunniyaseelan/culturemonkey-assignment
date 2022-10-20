@@ -21,7 +21,7 @@ export default function UpdateUser() {
 
  async function postFirstName(){
   setEmailId("")
-  setFirstName("")
+  // setFirstName("")
   if(first_name && emailId !== null){
     try{
       await axios.put(`/user-management/user-details/users/${emailId}`,{
@@ -113,7 +113,7 @@ export default function UpdateUser() {
     <div className="App">
     <h3>Update User Details</h3>
     <form onSubmit={updateUserDetails}>
-    <label htmlFor="email">Email ID</label>
+    <label htmlFor="name">Email ID</label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required />
 
     <label htmlFor="name">First Name</label>
@@ -131,7 +131,7 @@ export default function UpdateUser() {
     <label htmlFor="name">Active</label>
     <input type="text" value={active} onChange={(e)=>setActive(e.target.value)} />
 
-    <label htmlFor="email">Email</label>
+    <label htmlFor="name">Email</label>
     <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
 
     <input type="submit" />

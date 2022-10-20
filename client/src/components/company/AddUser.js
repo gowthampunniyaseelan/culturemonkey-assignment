@@ -17,14 +17,13 @@ function AddUser(){
     setDesignation("")
     setDateOfBirth("")
     try{
-     await axios.put("/company-management/user-management/users",{
-      company_id:company_id,
+     await axios.put(`/company-management/user-management/users/${company_id}`,{
       first_name:first_name,
       last_name:last_name,
       email:email,
       designation:designation,
       date_of_birth:date_of_birth,
-      active:active,
+      active:active
       })
     }catch(err){
       console.log(err);
@@ -41,11 +40,11 @@ function AddUser(){
       <label htmlFor="address">Last Name</label>
       <input type="text" value={last_name} onChange={(e)=>setLastName(e.target.value)} required/>
       <label htmlFor="coordinates">Email</label>
-      <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
+      <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
       <label htmlFor="coordinates">Designation</label>
       <input type="text" value={designation} onChange={(e)=>setDesignation(e.target.value)} required/>
       <label htmlFor="coordinates">Date of birth</label>
-      <input type="text" value={date_of_birth} onChange={(e)=>setDateOfBirth(e.target.value)} required/>
+      <input type="date" value={date_of_birth} onChange={(e)=>setDateOfBirth(e.target.value)} required/>
       <input type="submit"/>
     </form>
     </div>

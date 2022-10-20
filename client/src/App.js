@@ -1,9 +1,11 @@
 import "./App.css"
-import CreateCompany  from "./components/CreateCompany";
-import GetCompany from "./components/GetCompany";
-import GenerateListView from "./components/generateListView";
-import UpdateCompany from "./components/UpdateCompany";
-import AddUser from "./components/AddUser";
+import CreateCompany from "./components/company/CreateCompany"
+import GetCompany from "./components/company/GetCompany";
+import GenerateListView from "./components/company/generateListView";
+import UpdateCompany from "./components/company/UpdateCompany";
+import AddUser from "./components/company/AddUser";
+import RemoveUser from "./components/company/RemoveUser";
+import DeleteCompany from "./components/company/DeleteCompany";
 function App() {
   return(
     <>
@@ -12,6 +14,8 @@ function App() {
     <UpdateCompany/>
     <GenerateListView/>
     <AddUser/>
+    <RemoveUser/>
+    <DeleteCompany/>
     </>
  
   );

@@ -1,5 +1,4 @@
-const CompanyModel = require("../database/models/company")
-const UserModel = require("../database/models/user")
+const CompanyModel = require("../../database/models/company")
 module.exports = function(req,res){
   CompanyModel.findOne({company_id:req.body.company_id},(err,result)=>{
     if(err){

@@ -1,4 +1,4 @@
-const CompanyModel = require("../database/models/company");
+const CompanyModel = require("../../database/models/company")
 module.exports = async function(req,res){
   if(req.body.company_name){
     await CompanyModel.updateOne({company_id:req.params.id},{

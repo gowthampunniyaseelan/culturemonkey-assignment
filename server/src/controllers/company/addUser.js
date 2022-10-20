@@ -13,6 +13,8 @@ module.exports = async function(req,res){
       }
     }
   ).then(()=>{
-    res.status(200).json({message:"Successfully Updated"})
+    res.status(201).json({message:"Successfully Added"})
+  }).catch((err)=>{
+    res.status(204).json({message:"No Content"})
   })
 }

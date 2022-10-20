@@ -5,6 +5,10 @@ module.exports = async function(req,res){
       $set:{
         company_name:req.body.company_name
       }
+    }).then(()=>{
+      res.status(201).json({message:"Updated Successfully"})
+    }).catch(()=>{
+      res.status(204).json({message:"No Content"})
     })
   }
    if(req.body.company_address){
@@ -12,6 +16,10 @@ module.exports = async function(req,res){
       $set:{
         company_address:req.body.company_address
       }
+    }).then(()=>{
+      res.status(201).json({message:"Updated Successfully"})
+    }).catch(()=>{
+      res.status(204).json({message:"No Content"})
     })
    }
    if(req.body.coordinates){
@@ -19,6 +27,10 @@ module.exports = async function(req,res){
       $set:{
         coordinates:req.body.coordinates
       }
+    }).then(()=>{
+      res.status(201).json({message:"Updated Successfully"})
+    }).catch(()=>{
+      res.status(204).json({message:"No Content"})
     })
    }
     

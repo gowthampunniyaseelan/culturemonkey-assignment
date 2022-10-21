@@ -43,7 +43,7 @@ function GenerateListView(){
           <td>{show.company_id}</td>
           <td>{show.company_name}</td>
             {/* <td>{show.company_address}</td> */}
-          <td><BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
+          <td>{<BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
              height="50px"
              mapOptions={{
              navigationBarMode: "square",
@@ -53,7 +53,7 @@ function GenerateListView(){
             center: { latitude:show.coordinates[0], longitude: show.coordinates[1] },
             mapTypeId: "color",
             }}
-            />
+            />}
           </td>
             {/* <td>{show.coordinates}</td> */}
         </tr>

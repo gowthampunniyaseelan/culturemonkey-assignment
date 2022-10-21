@@ -59,6 +59,7 @@ const[storeId,setStoreId] = useState(null);
         active:active
       })
       setCompanyId("")
+      window.location.reload();
     }catch(err){
       console.log(err);
     }

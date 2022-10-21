@@ -1,11 +1,13 @@
 import axios from "axios";
 import {useState} from "react"
+import "../../static/css/company/GetCompany.css"
 function GetCompany(){
   const[companyId,setCompanyId] = useState(null)
   const[showCompanyId,setShowCompanyId] = useState(null)
   const[showCompanyName,setShowCompanyName] = useState(null)
   const[showCompanyAddress,setShowCompanyAddress] = useState(null)
-  const[showCompanyCoordinates,setShowCompanyCoordinates] = useState(null)
+  const[showCompanyLatitude,setShowCompanyLatitude] = useState(null)
+  const[showCompanyLongitude,setShowCompanyLongitude] = useState(null)
   async function getThedetails(e){
     e.preventDefault();
     setCompanyId("")
@@ -14,24 +16,38 @@ function GetCompany(){
         setShowCompanyId(result.data.company_id)
         setShowCompanyName(result.data.company_name)
         setShowCompanyAddress(result.data.company_address)
-        setShowCompanyCoordinates(result.data.coordinates)
+        setShowCompanyLatitude(result.data.coordinates[0])
+        setShowCompanyLongitude(result.data.coordinates[1])
       })
     }catch(err){
       console.log(err);
     }
   }
   return (
-    <div className="App">
-    <h3>Get the company</h3>
-    <form onSubmit={getThedetails}>
-      <label htmlFor="companyName">CompanyID</label>
+    <div className="container">
+    <form onSubmit={getThedetails} className="form-container">
+    <h3 style={{fontWeight:100}}>Get the company</h3>
+    <div className="company-id">
+    <label htmlFor="companyName" style={{fontWeight:100}}>CompanyID </label>
       <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
-      <input type="submit" value="Submit" />
+    </div>
+    <div className="button">
+      <input style={{fontWeight:100}} type="submit" value="Submit" />
+    </div> 
     </form>
-    <p>{showCompanyId}</p>
-    <p>{showCompanyName}</p>
-    <p>{showCompanyAddress}</p>
-    <p>{showCompanyCoordinates}</p>
+
+    <div className="show-details">
+    <p className="show-company-id">Company ID: {showCompanyId}</p>
+    <hr />
+    <p className="show-company-name">Company Name: {showCompanyName}</p>
+    <hr />
+    <p className="show-company-address">Address :{showCompanyAddress}</p>
+    <hr />
+    <p className="show-company-latitude">Latitude: {showCompanyLatitude}</p> 
+    <hr />
+    <p className="show-company-longitude">Longitude: {showCompanyLongitude} </p>
+    </div>
+    
     </div>
     )
 }

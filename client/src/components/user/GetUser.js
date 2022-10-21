@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useState} from "react"
+import "../../static/css/user/GetUser.css"
 function GetUser(){
   const[userId,setUserId] = useState(null)
   const[showFirstName,setShowFirstName] = useState([])
@@ -13,7 +14,6 @@ function GetUser(){
     setUserId("")
     try{
      const {data} =  await axios.get(`/user-management/user-details/users/${userId}`)
-        console.log(data);
         data.users.map((value)=>(
           storeDetails(value)
         ))   
@@ -31,19 +31,30 @@ function GetUser(){
     setShowActive(value.active)
   }
   return (
-    <div className="App">
-    <h3>Get the user</h3>
-    <form onSubmit={getUserdetails}>
-      <label htmlFor="companyName">User Email ID</label>
-      <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
-      <input type="submit" value="Submit" />
+    <div className="container">
+    <form onSubmit={getUserdetails}  className="form-container">
+    <h3 style={{fontWeight:100}}>Get the user</h3>
+    <div className="email-id">
+    <label htmlFor="email" style={{fontWeight:100}}>User Email ID </label>
+    <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
+    </div>  
+    <div className="button">
+    <input type="submit" value="Submit" />
+    </div>
     </form>
-    <p>{showFirstName}</p>
-    <p>{showLastName}</p>
-    <p>{showEmail}</p>
-    <p>{showDesignation}</p>
-    <p>{showDateOfBirth}</p>
-    <p>{String(showActive)}</p>
+    <div className="show-details">
+    <p className="show-first-name">First Name - {showFirstName}</p>
+    <hr />
+    <p className="show-last-name">Last Name - {showLastName}</p>
+    <hr />
+    <p className="show-email">Email - {showEmail}</p>
+    <hr />
+    <p className="show-designation">Designation - {showDesignation}</p>
+    <hr />
+    <p className="show-dob">D-O-B - {showDateOfBirth}</p>
+    <hr />
+    <p className="show-active">Active - {String(showActive)}</p>
+    </div> 
     </div>
     )
 }

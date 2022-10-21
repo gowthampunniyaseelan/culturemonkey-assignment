@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useState} from "react"
+import "../../static/css/company/CreateCompany.css"
 function CreateCompany(){
   const[company_id,setCompanyId] = useState(null)
   const[company_name,setName] = useState(null)
@@ -31,22 +32,40 @@ function CreateCompany(){
   }
   
   return (
-    <div className="App">
+    <div className="container">
+    <form onSubmit={postThedetails} className="form-container">
     <h3>Create a Company</h3>
-    <form onSubmit={postThedetails}>
-      <label htmlFor="name">Company ID</label>
+      <div className="company-id">
+      <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />
-      <label htmlFor="name">Company Name</label>
+      </div>
+      
+      <div className="company-name">
+      <label htmlFor="name">Company Name </label>
       <input type="text" value={company_name} onChange={(e)=>setName(e.target.value)} required/>
-      <label htmlFor="address">Company Address</label>
+      </div>
+      
+      <div className="address">
+      <label htmlFor="address">Company Address </label>
       <input type="text" value={company_address} onChange={(e)=>setAddress(e.target.value)} required/>
-
-      <label htmlFor="coordinates">Coordinates: </label>
-      <label htmlFor="latitude">Latitude</label>
+      </div>
+      
+      <div className="coordinates">
+      <label htmlFor="coordinates">Coordinates </label>
+      </div>
+      <div className="latitude">
+      <label htmlFor="latitude">Latitude </label>
       <input type="text" value={latitude} onChange={(e)=>setLatitude(e.target.value)} required/>
-      <label htmlFor="latitude">Longitude</label>
+      </div>
+      <div className="longitude">
+      <label htmlFor="longitude">Longitude </label>
       <input type="text" value={longitude} onChange={(e)=>setLongitude(e.target.value)} required/>
+      </div>
+    
+
+      <div className="button">
       <input type="submit" value="Submit" />
+      </div>
     </form>
     </div>
     )

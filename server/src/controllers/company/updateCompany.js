@@ -25,7 +25,7 @@ module.exports = async function(req,res){
    if(req.body.coordinates){
     await CompanyModel.updateOne({company_id:req.params.id},{
       $set:{
-        coordinates:req.body.coordinates
+        coordinates:[req.body.coordinates[0],req.body.coordinates[1]]
       }
     }).then(()=>{
       res.status(201).json({message:"Updated Successfully"})

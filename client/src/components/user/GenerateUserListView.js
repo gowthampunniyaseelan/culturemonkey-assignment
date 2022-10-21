@@ -1,17 +1,18 @@
 import axios from "axios";
 import {useState,useEffect} from "react"
+import "../../static/css/user/GenerateUserListView.css"
 function GenerateUserListView(){
   const[showUser,setShowUser] = useState([]);
   const[temp,setTemp] = useState([]);
 
   useEffect(()=>{
     getUserdetails()
-  },[])
+  })
 
   async function getUserdetails(){
     try{
      const {data} = await axios.get("/user-management/user-details/users")
-     console.log(data);
+     console.log("This is user data",data);
      data.map(value=>(
       setTemp(value.users)
      ))
@@ -22,8 +23,8 @@ function GenerateUserListView(){
     }
   }
   return (
-    <div className="App">
-     <table>
+    <div>
+     <table class="styled-table">
         <thead>
           <tr>
             <th>First Name</th>
@@ -34,11 +35,10 @@ function GenerateUserListView(){
             <th>Active</th>
           </tr>
         </thead>
-       {
-        
-        showUser.map(show=>(
         <tbody>
-          <tr>
+      {
+        showUser.map(show=>(
+          <tr style={{marginTop:-100}}>
             <td>{show.first_name}</td>
             <td>{show.last_name}</td>
             <td>{show.email}</td>
@@ -46,8 +46,8 @@ function GenerateUserListView(){
             <td>{show.date_of_birth}</td>
             <td>{String(show.active)}</td>
           </tr>
-        </tbody>
-    ))}
+      ))}
+    </tbody>
     </table>
     </div>
     )

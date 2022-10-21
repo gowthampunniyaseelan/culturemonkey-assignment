@@ -114,31 +114,45 @@ export default function UpdateUser() {
           // }
         }
   return (
-    <div className="App">
-    <h3>Update User Details</h3>
-    <form onSubmit={updateUserDetails}>
-    <label htmlFor="name">Email ID</label>
+    <div className="container">
+    <form onSubmit={updateUserDetails} className="form-container" style={{marginTop:-70}}>
+    <h3 style={{marginLeft:145,fontWeight:100}}>Update User Details</h3>
+    <div className="email-id"  style={{marginLeft:0}}>
+    <label htmlFor="name">Email ID </label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required />
-
-    <label htmlFor="name">First Name</label>
-    <input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} />
-
-    <label htmlFor="name">Last Name</label>
+    </div>
+   
+<div className="first-name">
+<label htmlFor="name">First Name </label>
+<input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} />
+</div>
+ 
+ <div className="last-name">
+ <label htmlFor="name">Last Name </label>
     <input type="text" value={last_name} onChange={(e)=>setLastName(e.target.value)} />
+ </div>
 
-    <label htmlFor="name">Designation</label>
+    
+<div className="designation">
+<label htmlFor="name">Designation </label>
     <input type="text" value={designation} onChange={(e)=>setDesignation(e.target.value)} />
+</div>
 
-    <label htmlFor="name">Date of birth</label>
+<div  className="dob">
+<label htmlFor="name">Date of birth </label>
     <input type="date" value={date_of_birth} onChange={(e)=>setDateOfBirth(e.target.value)} />
-
-    <label htmlFor="name">Active</label>
+</div>
+   <div className='active' style={{marginTop:20}}>
+   <label htmlFor="name">Active </label>
     <input type="text" value={active} onChange={(e)=>setActive(e.target.value)} />
-
-    <label htmlFor="name">Email</label>
+   </div> 
+    <div className='email'>
+    <label htmlFor="name">Email </label>
     <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-
+    </div>
+    <div className='button'>
     <input type="submit" />
+    </div>
     </form>
     </div>
     )

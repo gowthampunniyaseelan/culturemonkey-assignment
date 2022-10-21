@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import "../../static/css/company/Migrate.css"
 export default function Migrate() {
 // Store the user Id
 const[storeId,setStoreId] = useState(null);
@@ -43,7 +44,6 @@ const[storeId,setStoreId] = useState(null);
   // put the user to the company
   async function getThedetails(e){
     e.preventDefault();
-    setCompanyId("")
     try{
       await axios.put(`/company-management/user-management/${companyId}`,{
         first_name:first_name,
@@ -53,6 +53,7 @@ const[storeId,setStoreId] = useState(null);
         date_of_birth:date_of_birth,
         active:active
       })
+      setCompanyId("")
     }catch(err){
       console.log(err);
     }
@@ -61,22 +62,51 @@ function deleteUser(){
   axios.delete(`/company-management/user-management/${storeId}`)
 }
   return (
-    <div className="App">
-    <h3>Get the user for migration</h3>
-    <p>Enter the email Id to get the user</p>
-    <form onSubmit={getUserdetails}>
-      <label htmlFor="companyName">User Email ID</label>
-      <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
-      <input type="submit" value="Submit" />
+    <div className="container">
+    <div style={{
+      backgroundColor:"white",
+      position:"absolute",
+      marginTop:-400,
+      width:300,
+      borderRadius:10,
+      height:30
+    }}>
+    <h3 style={{
+      marginTop:1,
+      marginLeft:100
+    }}>Migration</h3>
+    </div>
+   
+    <form onSubmit={getUserdetails} className="form-container1">
+    <p style={{
+      marginLeft:40
+    }}>Enter the email Id to get the user</p>
+    <div className="email-id">
+    <label htmlFor="email">User Email ID </label>
+    <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
+    </div>
+    <div className="button">
+    <input type="submit" value="Submit" />
+    </div>
     </form>
 
     {/* Company Name to Migrate user */}
+
+    
+    <form onSubmit={getThedetails} className="form-container2">
     <p>Enter company Id to migrate the user</p>
-    <form onSubmit={getThedetails}>
-      <label htmlFor="companyName">CompanyID</label>
-      <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
+    <div className="company-id">
+    <label htmlFor="companyName">CompanyID </label>
+    <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
+    </div>
+      <div className="button">
       <input type="submit" value="Submit" />
+      </div>
     </form>
-    <button onClick={deleteUser}>Delete the duplicate user</button>
+<div>
+
+<button className="delete-button" onClick={deleteUser}>Delete the duplicate user</button>
+</div>
+    
     </div>
 )}

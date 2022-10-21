@@ -1,5 +1,6 @@
 import axios from "axios";
-import {useState} from "react"
+import {useState} from "react";
+import "../../static/css/company/DeleteCompany.css"
 function DeleteCompany(){
   const[companyId,setCompanyId] = useState(null)
   async function removeUserFromCompany(e){
@@ -14,12 +15,16 @@ function DeleteCompany(){
   }
 
   return (
-    <div className="App">
-    <h3>Delete Company</h3>
-    <form onSubmit={removeUserFromCompany}>
-      <label htmlFor="companyName">Company ID</label>
-      <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
+    <div className="container">
+    <form onSubmit={removeUserFromCompany} className="form-container">
+    <h3 style={{fontWeight:100}}>Delete Company</h3>
+    <div className="company-id">
+    <label htmlFor="companyName" style={{fontWeight:100}}>Company ID </label>
+    <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
+    </div>
+      <div className="button">
       <input type="submit" value="Submit" />
+      </div>
     </form>
     </div>
     )

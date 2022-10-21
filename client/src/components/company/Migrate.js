@@ -17,6 +17,10 @@ const[storeId,setStoreId] = useState(null);
   // put user state
   const[companyId,setCompanyId] = useState(null)
 
+  // Toggle the button
+  const[toggle,setToggle] = useState(true);
+  const[togglefordeletebutton,setToggleForDeleteButton]=useState(true);
+
   // get the user from a company
   async function getUserdetails(e){
     e.preventDefault();
@@ -24,6 +28,7 @@ const[storeId,setStoreId] = useState(null);
     setUserId("")
     try{
      const {data} =  await axios.get(`company-management/user-management/${userId}`)
+     setToggleForDeleteButton(false)
         data.users.map((value)=>(
           storeDetails(value)
         ))   
@@ -60,6 +65,7 @@ const[storeId,setStoreId] = useState(null);
   }
 function deleteUser(){
   axios.delete(`/company-management/user-management/${storeId}`)
+setToggle(false)
 }
   return (
     <div className="container">
@@ -83,7 +89,7 @@ function deleteUser(){
     }}>Enter the email Id to get the user</p>
     <div className="email-id">
     <label htmlFor="email">User Email ID </label>
-    <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
+    <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} required />
     </div>
     <div className="button">
     <input type="submit" value="Submit" />
@@ -97,15 +103,23 @@ function deleteUser(){
     <p>Enter company Id to migrate the user</p>
     <div className="company-id">
     <label htmlFor="companyName">CompanyID </label>
-    <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
+    <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} required/>
     </div>
-      <div className="button">
+    {toggle ? <div className="button">
+      <input disabled={toggle} style={{opacity:0.4,backgroundColor:"white",color:"black"}} type="submit" value="Submit" />
+      </div>
+      :<div className="button">
       <input type="submit" value="Submit" />
       </div>
+      }
+      
     </form>
 <div>
+{
+  togglefordeletebutton ? <button className="delete-button" disabled={togglefordeletebutton} onClick={deleteUser} style={{opacity:0.4,backgroundColor:"white",color:"black"}}>Delete the duplicate user</button> 
+  : <button className="delete-button" onClick={deleteUser}>Delete the duplicate user</button>
+}
 
-<button className="delete-button" onClick={deleteUser}>Delete the duplicate user</button>
 </div>
     
     </div>

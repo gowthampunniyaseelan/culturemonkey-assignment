@@ -17,7 +17,7 @@
   margin-top: -45px;
   padding: 20px;
   border-radius: 10px;
-  margin-left: 20px;
+  margin-left: 230px;
 }
 .form-container>h3{
  margin-left: 160px;
@@ -54,7 +54,4 @@
 .show-first-name,.show-last-name,.show-email,.show-designation,.show-dob,.show-active{
   margin-top: 10px;
   margin-left: 10px;
-}
-.email-id{
-  margin-left: 90px;
 }

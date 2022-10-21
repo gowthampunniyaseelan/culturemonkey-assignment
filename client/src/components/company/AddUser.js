@@ -33,7 +33,7 @@ function AddUser(){
   return (
 <div className="container">
   <form onSubmit={postUserdetails} className="form-container">
-    <h3 style={{marginLeft:90,fontWeight:100}}>Add a User</h3>
+    <h3 style={{marginLeft:190,fontWeight:100}}>Add a User</h3>
     <div className="company-id">
       <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />

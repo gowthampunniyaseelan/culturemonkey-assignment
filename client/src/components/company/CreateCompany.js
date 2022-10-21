@@ -34,7 +34,7 @@ function CreateCompany(){
   return (
     <div className="container">
     <form onSubmit={postThedetails} className="form-container">
-    <h3>Create a Company</h3>
+    <h3 style={{fontWeight:100}}>Create a Company</h3>
       <div className="company-id">
       <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />

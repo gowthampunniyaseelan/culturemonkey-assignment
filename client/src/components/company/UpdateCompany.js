@@ -68,7 +68,7 @@ export default function UpdateCompany() {
   return (
 <div className="container">
   <form onSubmit={postThedetails} className="form-container">
-  <h3>Update a company</h3>
+  <h3 style={{fontWeight:100}}>Update a company</h3>
   <div className="company-id">
     <label htmlFor="name">Company ID </label>
     <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />

@@ -1,43 +1,65 @@
 import { useState } from 'react'
 import axios from "axios";
 export default function UpdateUser() {
-  const[emailId,setEmailId] = useState(null)
-  const[first_name,setFirstName] = useState(null)
-  const[last_name,setLastName] = useState(null)
-  const[email,setEmail] = useState(null)
-  const[designation,setDesignation] = useState(null)
-  const[date_of_birth,setDateOfBirth] = useState(null)
-  const[active,setActive] = useState(null)
+  const[emailId,setEmailId] = useState("")
+  const[first_name,setFirstName] = useState("")
+  const[last_name,setLastName] = useState("")
+  const[email,setEmail] = useState("")
+  const[designation,setDesignation] = useState("")
+  const[date_of_birth,setDateOfBirth] = useState("")
+  const[active,setActive] = useState("")
 
   async function updateUserDetails(e){
     e.preventDefault();
-    postFirstName()
-    postLastName()
-    postEmail()
-    postDesignation()
-    postDateOfBirth()
-    postActive()
+    if(first_name && emailId){
+      postFirstName()
+      setFirstName("")
+      setEmailId("")
+    }
+
+    if(last_name && emailId){
+      postLastName()
+      setLastName("")
+      setEmailId("")
+    }
+
+    if(email && emailId){
+      postEmail()
+      setEmail("")
+      setEmailId("")
+    }
+
+    if(designation && emailId){
+      postDesignation()
+      setDesignation("")
+      setEmailId("")
+    }
+    if(date_of_birth && emailId){
+      postDateOfBirth()
+      setDateOfBirth("")
+      setEmailId("")
+    }
+    if(active && emailId){
+      postActive()
+      setActive("")
+      setEmailId("")
+    }
+    
   }
 
  async function postFirstName(){
-  setEmailId("")
-  // setFirstName("")
-  if(first_name && emailId !== null){
+  // if(first_name && emailId !== null){
     try{
       await axios.put(`/user-management/user-details/users/${emailId}`,{
         first_name:first_name
-      })
+      }).then((result)=>console.log(result))
     }catch(err){
       console.log(err);
     }
-  }
-  setEmailId(null)
-  setFirstName(null)
+  // }
   }
   async function postLastName(){
-    setEmailId("")
-    setLastName("")
-    if(last_name && emailId !== null){
+    // if(last_name && emailId !== null){
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           last_name:last_name
@@ -45,14 +67,10 @@ export default function UpdateUser() {
       }catch(err){
         console.log(err);
       }
-    }
-  setEmailId(null)
-  setLastName(null)
+    // }
   }
   async function postEmail(){
-  setEmailId("")
-  setEmail("")
-    if(email && emailId !== null){
+    // if(email && emailId !== null){
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           email:email
@@ -60,14 +78,10 @@ export default function UpdateUser() {
       }catch(err){
         console.log(err);
       }
-    }
-  setEmailId(null)
-  setEmail(null)
+    // }
   }
   async function postDesignation(){
-    setEmailId("")
-    setDesignation("")
-      if(designation && emailId !== null){
+      // if(designation && emailId !== null){
         try{
           await axios.put(`/user-management/user-details/users/${emailId}`,{
             designation:designation
@@ -75,14 +89,10 @@ export default function UpdateUser() {
         }catch(err){
           console.log(err);
         }
-      }
-    setEmailId(null)
-    setDesignation(null)
+      // }
     }
     async function postDateOfBirth(){
-      setEmailId("")
-      setDateOfBirth("")
-        if(date_of_birth && emailId !== null){
+        // if(date_of_birth && emailId !== null){
           try{
             await axios.put(`/user-management/user-details/users/${emailId}`,{
               date_of_birth:date_of_birth
@@ -90,14 +100,10 @@ export default function UpdateUser() {
           }catch(err){
             console.log(err);
           }
-        }
-      setEmailId(null)
-      setDateOfBirth(null)
+        // }
       }
       async function postActive(){
-        setEmailId("")
-        setActive("")
-          if(active && emailId !== null){
+          // if(active && emailId !== null){
             try{
               await axios.put(`/user-management/user-details/users/${emailId}`,{
                 active:active
@@ -105,9 +111,7 @@ export default function UpdateUser() {
             }catch(err){
               console.log(err);
             }
-          }
-        setEmailId(null)
-        setActive(null)
+          // }
         }
   return (
     <div className="App">

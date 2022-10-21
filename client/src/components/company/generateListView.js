@@ -9,12 +9,21 @@ function GenerateListView(){
   useEffect(()=>{
       getTheCompanydetails()
       console.log(process.env);
-  })
+  },[])
+  function setCor(cor){
+    setLatitude(cor.coordinates[0])
+    setLongitude(cor.coordinates[1])
+
+    console.log(cor.coordinates[0])
+    console.log(cor.coordinates[1]);
+  }
   async function getTheCompanydetails(){
     try{
       const {data} = await axios.get("/company-management/company-details")
-      setLatitude(data[4].coordinates[0])
-      setLongitude(data[4].coordinates[1])
+      console.log(data);
+      data.map(cor=>(
+        setCor(cor)
+      ))
       setShowCompany(data)
     }catch(err){
       console.log(err);
@@ -37,7 +46,7 @@ function GenerateListView(){
             <td>{show.company_id}</td>
             <td>{show.company_name}</td>
             {/* <td>{show.company_address}</td> */}
-            {
+           <td> {
               latitude && longitude ? <BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
              height="100px"
              mapOptions={{
@@ -45,13 +54,13 @@ function GenerateListView(){
             }}
             width="100px"
             viewOptions={{
-            center: { latitude:latitude, longitude: longitude },
+            center: { latitude:"11.240984", longitude: "78.866570" },
             mapTypeId: "color",
             }}
             />
             : null
             }
-            
+            </td>
             {/* <td>{show.coordinates}</td> */}
           </tr>
         </tbody>

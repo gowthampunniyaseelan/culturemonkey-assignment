@@ -6,8 +6,6 @@ module.exports = async function(req,res){
     check = true
   }else if(req.body.active === "false"){
     check = false
-  }else{
-    res.status(400).json({message:"Check the value"})
   }
 
   if(req.body.first_name){

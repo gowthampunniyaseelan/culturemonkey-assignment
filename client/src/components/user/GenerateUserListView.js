@@ -3,12 +3,15 @@ import {useState,useEffect} from "react"
 function GenerateUserListView(){
   const[showUser,setShowUser] = useState([]);
   const[temp,setTemp] = useState([]);
+
   useEffect(()=>{
     getUserdetails()
   },[])
+
   async function getUserdetails(){
     try{
      const {data} = await axios.get("/user-management/user-details/users")
+     console.log(data);
      data.map(value=>(
       setTemp(value.users)
      ))

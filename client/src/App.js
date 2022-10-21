@@ -1,7 +1,7 @@
 import "./App.css"
 import CreateCompany from "./components/company/CreateCompany"
 import GetCompany from "./components/company/GetCompany";
-import GenerateListView from "./components/company/generateListView";
+import GenerateListView from "./components/company/GenerateListView";
 import UpdateCompany from "./components/company/UpdateCompany";
 import AddUser from "./components/company/AddUser";
 import RemoveUser from "./components/company/RemoveUser";

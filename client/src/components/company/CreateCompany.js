@@ -4,20 +4,25 @@ function CreateCompany(){
   const[company_id,setCompanyId] = useState(null)
   const[company_name,setName] = useState(null)
   const[company_address,setAddress] = useState(null)
-  const[coordinates,setCoordinates] = useState(null)
+  // const[coordinates,setCoordinates] = useState(null)
+  const[latitude,setLatitude] = useState(null)
+  const[longitude,setLongitude] = useState(null)
+
 
   async function postThedetails(e){
     e.preventDefault();
     setCompanyId("")
     setName("")
-    setCoordinates("")
+    setLatitude("")
+    setLongitude("")
+    // setCoordinates("")
     setAddress("")
     try{
      await axios.post("/company-management",{
         company_id:company_id,
         company_name:company_name,
         company_address:company_address,
-        coordinates:coordinates
+        coordinates:[latitude,longitude]
       })
       
     }catch(err){
@@ -35,8 +40,12 @@ function CreateCompany(){
       <input type="text" value={company_name} onChange={(e)=>setName(e.target.value)} required/>
       <label htmlFor="address">Company Address</label>
       <input type="text" value={company_address} onChange={(e)=>setAddress(e.target.value)} required/>
-      <label htmlFor="coordinates">Coordinates</label>
-      <input type="text" value={coordinates} onChange={(e)=>setCoordinates(e.target.value)} required/>
+
+      <label htmlFor="coordinates">Coordinates: </label>
+      <label htmlFor="latitude">Latitude</label>
+      <input type="text" value={latitude} onChange={(e)=>setLatitude(e.target.value)} required/>
+      <label htmlFor="latitude">Longitude</label>
+      <input type="text" value={longitude} onChange={(e)=>setLongitude(e.target.value)} required/>
       <input type="submit" value="Submit" />
     </form>
     </div>

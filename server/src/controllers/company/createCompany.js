@@ -10,7 +10,7 @@ module.exports = function(req,res){
           res.status(201).json({message:"Successfully Created"})
         })
       }else{
-        res.status(403).json({message:"Company is already exists"})
+        res.status(403).json({message:"Company already exists"})
       }
       } 
   })

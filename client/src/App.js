@@ -10,7 +10,8 @@ import GenerateUserListView from "./components/user/GenerateUserListView";
 import GetUser from "./components/user/GetUser";
 import UpdateUser from "./components/user/UpdateUser";
 import Migrate from "./components/company/Migrate";
-import Home from "./components/Home"
+import SignUp from "./components/auth/SignUp"
+import Login from "./components/auth/Login"
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +23,8 @@ function App() {
     <>
     <Router>
     <Routes>
-    <Route path="/" element={Home}/>
+    <Route path="/" element={<SignUp/>}/>
+    <Route path="/login" element={<Login/>}/>
     <Route path="/create-company" element={<CreateCompany/>}/> 
     <Route path="/get-company" element={<GetCompany/>}/>
     <Route path="/update-company" element={<UpdateCompany/>}/>

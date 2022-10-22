@@ -2,12 +2,12 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/CreateCompany.css"
 function CreateCompany(){
-  const[company_id,setCompanyId] = useState(null)
-  const[company_name,setName] = useState(null)
-  const[company_address,setAddress] = useState(null)
+  const[company_id,setCompanyId] = useState("")
+  const[company_name,setName] = useState("")
+  const[company_address,setAddress] = useState("")
   // const[coordinates,setCoordinates] = useState(null)
-  const[latitude,setLatitude] = useState(null)
-  const[longitude,setLongitude] = useState(null)
+  const[latitude,setLatitude] = useState("")
+  const[longitude,setLongitude] = useState("")
 
 
   async function postThedetails(e){

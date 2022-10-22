@@ -1,19 +1,29 @@
-.show-company-table{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.styled-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100vw;
+  position: absolute;
+  margin-top: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
   background-color: black;
-  height: 100vh;
-  color: white;
-  /* position: absolute; */
+  color: #ffffff;
+  text-align: left;
 }
-.head{
- margin-top: 60px;
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
 }
-.head tr th:not(:first-child){
-  padding-left: 400px;
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
 }
-.table-body tr th:not(:first-child){
-padding-left: 0px;
-margin-left: 20px;
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
 }
+
+/* body{
+  background-color: black;
+} */

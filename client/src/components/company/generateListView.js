@@ -32,8 +32,8 @@ function GenerateListView(){
       <Navbar/>
    
     <div>
-     <table className="table">
-        <thead className="head">
+     <table class="styled-table">
+        <thead>
           <tr>
             <th>Company ID</th>
             <th>Company Name</th>
@@ -41,7 +41,7 @@ function GenerateListView(){
             {/* <th>Coordinates</th> */}
           </tr>
         </thead>
-        <tbody className="table-body">
+        <tbody>
        {showCompany.map(show=>(
         <tr key={show.company_id}>
           <td>{show.company_id}</td>
@@ -65,7 +65,7 @@ function GenerateListView(){
     </tbody>
     </table>
     </div>
-    </>
+     </>
     )
 }
 export default GenerateListView;

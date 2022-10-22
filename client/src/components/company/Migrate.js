@@ -3,10 +3,10 @@ import axios from "axios"
 import "../../static/css/company/Migrate.css"
 export default function Migrate() {
 // Store the user Id
-const[storeId,setStoreId] = useState(null);
+const[storeId,setStoreId] = useState("");
 
   // get user state
-  const[userId,setUserId] = useState(null)
+  const[userId,setUserId] = useState("")
   const[first_name,setFirstName] = useState([])
   const[last_name,setLastName] = useState([])
   const[email,setEmail] = useState([])
@@ -15,7 +15,7 @@ const[storeId,setStoreId] = useState(null);
   const[active,setActive] = useState([])
 
   // put user state
-  const[companyId,setCompanyId] = useState(null)
+  const[companyId,setCompanyId] = useState("")
 
   // Toggle the button
   const[toggle,setToggle] = useState(true);
@@ -28,10 +28,15 @@ const[storeId,setStoreId] = useState(null);
     setUserId("")
     try{
      const {data} =  await axios.get(`company-management/user-management/${userId}`)
-     setToggleForDeleteButton(false)
-        data.users.map((value)=>(
-          storeDetails(value)
-        ))   
+     if(data){
+      setToggleForDeleteButton(false)
+      data.users.map((value)=>(
+        storeDetails(value)
+      ))   
+      alert("Success")
+     }else{
+      alert("No User Available")
+     }
     }catch(err){
       console.log(err);
     }
@@ -57,16 +62,32 @@ const[storeId,setStoreId] = useState(null);
         designation:designation,
         date_of_birth:date_of_birth,
         active:active
+      }).then((result)=>{
+        if(result.data){
+          const {data} = result
+          alert(data.message)
+          window.location.reload();
+          console.log(result);
+        }else{
+          alert("No Company ID Available")
+          window.location.reload();
+        }
       })
       setCompanyId("")
-      window.location.reload();
     }catch(err){
       console.log(err);
     }
   }
 function deleteUser(){
-  axios.delete(`/company-management/user-management/${storeId}`)
-setToggle(false)
+  axios.delete(`/company-management/user-management/${storeId}`).then((result)=>{
+    const {data} = result
+    if(data.message === "Successfully Deleted"){
+      alert(data.message)
+      setToggle(false)
+    }else{
+      alert("No user available")
+    } 
+  })
 }
   return (
     <div className="container">
@@ -93,7 +114,7 @@ setToggle(false)
     <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} required />
     </div>
     <div className="button">
-    <input type="submit" value="Submit" />
+    <input disabled={togglefordeletebutton ? false : true ||  toggle ? true : false } type="submit" value="Submit" />
     </div>
     </form>
 

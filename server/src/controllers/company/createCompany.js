@@ -7,12 +7,10 @@ module.exports = function(req,res){
     else{
       if(!result){
         CompanyModel.create(req.body).then(()=>{
-          return res.status(201).json({message:"Successfully Created"})
-        }).catch(err=>{
-         return res.status(400).json({message:"You have to fill all the field"})
+          res.status(201).json({message:"Successfully Created"})
         })
       }else{
-        return res.status(403).json({message:"Field is already exists"})
+        res.status(403).json({message:"Company is already exists"})
       }
       } 
   })

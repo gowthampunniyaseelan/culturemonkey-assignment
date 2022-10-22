@@ -12,9 +12,12 @@ module.exports = async function(req,res){
         }
       }
     }
-  ).then(()=>{
-    res.status(201).json({message:"Successfully Added"})
-  }).catch((err)=>{
-    res.status(204).json({message:"No Content"})
+  ).then((result)=>{
+    if(result.modifiedCount >=1){
+      res.status(201).json({message:"Successfully Added"})
+    }
+    else{
+      res.status(204).json({message:"Company ID not available"})
+    }
   })
 }

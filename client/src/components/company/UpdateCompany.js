@@ -9,6 +9,7 @@ export default function UpdateCompany() {
   // const[coordinates,setCoordinates] = useState("")
   const[latitude,setLatitude] = useState("")
   const[longitude,setLongitude] = useState("")
+
   async function postThedetails(e){
     e.preventDefault();
     if(company_name && company_id){
@@ -35,6 +36,7 @@ export default function UpdateCompany() {
     try{
       await axios.put(`/company-management/companies/${company_id}`,{
         company_name:company_name
+      }).then(()=>{
       })
     }catch(err){
       console.log(err);
@@ -46,6 +48,7 @@ export default function UpdateCompany() {
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           company_address:company_address
+        }).then(()=>{
         })
       }catch(err){
         console.log(err);
@@ -59,6 +62,7 @@ export default function UpdateCompany() {
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           coordinates:[latitude,longitude]
+        }).then(()=>{
         })
       }catch(err){
         console.log(err);

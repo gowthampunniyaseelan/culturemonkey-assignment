@@ -25,6 +25,13 @@ function AddUser(){
       designation:designation,
       date_of_birth:date_of_birth,
       active:active
+      }).then((res)=>{
+        const {data} = res
+        if(data.message === "Successfully Added"){
+          alert(data.message)
+        }else{
+          alert("Company ID not available")
+        }
       })
     }catch(err){
       console.log(err);

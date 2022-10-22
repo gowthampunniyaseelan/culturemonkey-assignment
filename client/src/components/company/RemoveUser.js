@@ -2,12 +2,19 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/RemoveUser.css"
 function RemoveUser(){
-  const[emailId,setEmailId] = useState(null)
+  const[emailId,setEmailId] = useState("")
   async function removeUserFromCompany(e){
     e.preventDefault();
     setEmailId("");
     try{
-      await axios.delete(`/company-management/user-management/users/${emailId}`)
+      await axios.delete(`/company-management/user-management/users/${emailId}`).then((result)=>{
+        const {data} = result
+        if(data.message === "Successfully Deleted"){
+          alert(data.message)
+        }else{
+          alert("No user available")
+        } 
+      })
     }
     catch(err){
       console.log(err);

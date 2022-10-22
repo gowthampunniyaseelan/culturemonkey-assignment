@@ -7,9 +7,11 @@ module.exports = async function(req,res){
         }
       }
     }
-  ).then(()=>{
-    res.status(202).json({message:"Successfully Deleted"})
-  }).catch((err)=>{
-    res.status(204).json({message:"No Content"})
+  ).then((result)=>{
+    if(result.modifiedCount>=1){
+      res.status(202).json({message:"Successfully Deleted"})
+    }else{
+      res.status(204).json({message:"No User Available"})
+    } 
   })
 }

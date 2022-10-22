@@ -2,12 +2,12 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/GetCompany.css"
 function GetCompany(){
-  const[companyId,setCompanyId] = useState(null)
-  const[showCompanyId,setShowCompanyId] = useState(null)
-  const[showCompanyName,setShowCompanyName] = useState(null)
-  const[showCompanyAddress,setShowCompanyAddress] = useState(null)
-  const[showCompanyLatitude,setShowCompanyLatitude] = useState(null)
-  const[showCompanyLongitude,setShowCompanyLongitude] = useState(null)
+  const[companyId,setCompanyId] = useState("")
+  const[showCompanyId,setShowCompanyId] = useState("")
+  const[showCompanyName,setShowCompanyName] = useState("")
+  const[showCompanyAddress,setShowCompanyAddress] = useState("")
+  const[showCompanyLatitude,setShowCompanyLatitude] = useState("")
+  const[showCompanyLongitude,setShowCompanyLongitude] = useState("")
   async function getThedetails(e){
     e.preventDefault();
     setCompanyId("")
@@ -18,6 +18,10 @@ function GetCompany(){
         setShowCompanyAddress(result.data.company_address)
         setShowCompanyLatitude(result.data.coordinates[0])
         setShowCompanyLongitude(result.data.coordinates[1])
+        alert("Success")
+      }).catch(()=>{
+        alert("Company ID not available")
+        window.location.reload()
       })
     }catch(err){
       console.log(err);

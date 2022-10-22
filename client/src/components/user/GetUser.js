@@ -2,7 +2,7 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/user/GetUser.css"
 function GetUser(){
-  const[userId,setUserId] = useState(null)
+  const[userId,setUserId] = useState("")
   const[showFirstName,setShowFirstName] = useState([])
   const[showLastName,setShowLastName] = useState([])
   const[showEmail,setShowEmail] = useState([])
@@ -14,9 +14,15 @@ function GetUser(){
     setUserId("")
     try{
      const {data} =  await axios.get(`/user-management/user-details/users/${userId}`)
-        data.users.map((value)=>(
-          storeDetails(value)
-        ))   
+     if(data){
+      data.users.map((value)=>(
+        storeDetails(value)
+      ))   
+      alert("Success")
+     }else{
+      alert("No User Available")
+      window.location.reload()
+     }
     }catch(err){
       console.log(err);
     }

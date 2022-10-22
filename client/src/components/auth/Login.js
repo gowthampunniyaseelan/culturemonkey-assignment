@@ -12,6 +12,7 @@ export default function Login() {
       // console.log(result);
       if(result.data){
         const {data} = result
+        window.localStorage.setItem("emailId",data.email)
        const temp =  window.localStorage.getItem("emailId",data.email)
        setLocalStorage(temp)
         alert("Login Successful")
@@ -20,28 +21,27 @@ export default function Login() {
     })
   }
   return (
-  <div className='container'>
+  <div className='login-container'>
   {localStorage ? 
     <Navigate to="/create-company"/> : null
   }
-   <form onSubmit={getUserDetails} className="form-container">
-   <div className='email-id' style={{
-    marginLeft:130
-   }}>
+   <form onSubmit={getUserDetails} className="login-form-container">
+   <div className='login-email-id'>
    <label htmlFor="name">Email ID </label>
-   <input type="text" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>
+   <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>
    </div>
-   <div className='button' style={{
-    marginLeft:100
+   <div className='login-button' style={{
+    marginLeft:330
    }}>
    <input type="submit" />
    </div>
    </form>
-   <div className='navigation-link'>
+   <div className='login-navigation-link'>
     <a style={{
       textDecoration:"none"
-    }} href = "/"><span style={{color:"white",marginLeft:-550}}>New User Click Here To SignUp</span></a>
+    }} href = "/"><span style={{color:"black",marginLeft:-550}}>New User Click Here To SignUp</span></a>
    </div>
   </div>
+  
   )
 }

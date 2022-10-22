@@ -38,7 +38,7 @@ function GetCompany(){
     <label htmlFor="get-companyName" style={{fontWeight:100}}>CompanyID </label>
       <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
     </div>
-    <div className="button">
+    <div className="get-button">
       <input style={{fontWeight:100}} type="submit" value="Submit" />
     </div> 
     </form>

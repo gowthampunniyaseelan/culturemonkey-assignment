@@ -1,6 +1,12 @@
 import React from 'react'
 import "../../static/css/nav/Navbar.css"
+import { useNavigate } from 'react-router-dom'
 export default function Navbar() {
+  const Navigate = useNavigate()
+  function logOut(){
+    window.localStorage.removeItem("emailId")
+    Navigate("/")
+  }
   return (
     <div className='nav-container'>
       <nav>
@@ -15,6 +21,7 @@ export default function Navbar() {
         <p><a href="/list-user">User Details</a></p>
         <p><a href="/get-user">Get User</a></p>
         <p><a href="/update-user">Update User</a></p>
+        <button onClick={logOut}>Logout</button>
       </nav>
     </div>
   )

@@ -42,7 +42,7 @@ export default function Home() {
    <div className='navigation-link'>
     <a style={{
       textDecoration:"none"
-    }}  href="/login"><span style={{color:"white",marginLeft:-550}}>Already have an account Login</span></a>
+    }}  href="/login"><span style={{color:"black",marginLeft:-550}}>Already have an account Login</span></a>
    </div>
   </div>
   )

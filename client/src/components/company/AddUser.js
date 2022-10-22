@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/AddUser.css"
+import Navbar from "../nav/Navbar";
 function AddUser(){
   const[company_id,setCompanyId] = useState(null)
   const[first_name,setFirstName] = useState(null)
@@ -38,38 +39,41 @@ function AddUser(){
     }
   } 
   return (
-<div className="container">
-  <form onSubmit={postUserdetails} className="form-container">
-    <h3 style={{marginLeft:190,fontWeight:100}}>Add a User</h3>
-    <div className="company-id">
+    <>
+<Navbar/>
+<div className="add-container">
+  <form onSubmit={postUserdetails} className="add-form-container">
+    <h3 style={{marginLeft:30,fontWeight:700,marginTop:10}}>Add a User</h3>
+    <div className="add-company-id">
       <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />
     </div>     
-    <div className="first-name">
+    <div className="add-first-name">
       <label htmlFor="name">First Name </label>
       <input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} required/>
     </div>      
-    <div className="last-name">
+    <div className="add-last-name">
       <label htmlFor="address">Last Name </label>
       <input type="text" value={last_name} onChange={(e)=>setLastName(e.target.value)} required/>
     </div>
-    <div className="email">
+    <div className="add-email">
       <label htmlFor="coordinates">Email </label>
       <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
     </div>     
-    <div className="designation">
+    <div className="add-designation">
       <label htmlFor="coordinates">Designation </label>
       <input type="text" value={designation} onChange={(e)=>setDesignation(e.target.value)} required/>
     </div>
-    <div className="dob">
+    <div className="add-dob">
       <label htmlFor="coordinates">Date of birth </label>
       <input type="date" value={date_of_birth} onChange={(e)=>setDateOfBirth(e.target.value)} required/>
     </div>
-    <div className="button">
+    <div className="add-button">
       <input type="submit"/>
     </div>
   </form>
 </div>
+</>
     )
 }
 export default AddUser;

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import axios from "axios";
+import Navbar from '../nav/Navbar';
+import "../../static/css/user/UpdateUser.css"
 export default function UpdateUser() {
   const[emailId,setEmailId] = useState("")
   const[first_name,setFirstName] = useState("")
@@ -114,46 +116,51 @@ export default function UpdateUser() {
           // }
         }
   return (
-    <div className="container">
-    <form onSubmit={updateUserDetails} className="form-container" style={{marginTop:-70}}>
-    <h3 style={{marginLeft:145,fontWeight:100}}>Update User Details</h3>
-    <div className="email-id"  style={{marginLeft:0}}>
+<>
+  <Navbar/>   
+  <div className="update-user-container">
+    <form onSubmit={updateUserDetails} className="update-user-form-container">
+    <h3 style={{marginLeft:0,fontWeight:700}}>Update User Details</h3>
+    <div className="update-user-email-id">
     <label htmlFor="name">Email ID </label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required />
     </div>
    
-<div className="first-name">
-<label htmlFor="name">First Name </label>
-<input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} />
-</div>
+    <div className="update-user-first-name">
+    <label htmlFor="name">First Name </label>
+    <input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} />
+    </div>
  
- <div className="last-name">
- <label htmlFor="name">Last Name </label>
+    <div className="update-user-last-name">
+    <label htmlFor="name">Last Name </label>
     <input type="text" value={last_name} onChange={(e)=>setLastName(e.target.value)} />
- </div>
+    </div>
 
-    
-<div className="designation">
-<label htmlFor="name">Designation </label>
+    <div className="update-user-designation">
+    <label htmlFor="name">Designation </label>
     <input type="text" value={designation} onChange={(e)=>setDesignation(e.target.value)} />
-</div>
+    </div>
 
-<div  className="dob">
-<label htmlFor="name">Date of birth </label>
+    <div  className="update-user-dob">
+    <label htmlFor="name">Date of birth </label>
     <input type="date" value={date_of_birth} onChange={(e)=>setDateOfBirth(e.target.value)} />
-</div>
-   <div className='active' style={{marginTop:20}}>
-   <label htmlFor="name">Active </label>
+    </div>
+
+    <div className='update-user-active'>
+    <label htmlFor="name">Active </label>
     <input type="text" value={active} onChange={(e)=>setActive(e.target.value)} />
-   </div> 
-    <div className='email'>
+    </div> 
+
+    <div className='update-user-email'>
     <label htmlFor="name">Email </label>
     <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
     </div>
-    <div className='button'>
+
+    <div className='update-user-button'>
     <input type="submit" />
     </div>
     </form>
-    </div>
+  </div>
+    </>
     )
 }

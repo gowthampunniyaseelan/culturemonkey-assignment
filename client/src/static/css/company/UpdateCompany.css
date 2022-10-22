@@ -1,37 +1,35 @@
-.container{
+.update-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
-  padding: 100px;
   background-color: black;
-  height: 50vh;
-  width: 500px;
-  border-radius: 10px;
+  height: 100vh;
 }
-.company-id,.company-name,.address,.coordinates,.latitude,.longitude,.button{
+.update-company-id,.update-company-name,.update-address,.update-coordinates,.update-latitude,.update-longitude,.update-button{
   padding: 20px 20px 0px 0px ;
 }
-.form-container{
-  background-color: aliceblue;
-  margin-top: -45px;
+.update-form-container{
+  background-color: aqua;
+  margin-top: 100px;
   padding: 20px;
+  width: 500px;
   border-radius: 10px;
+  margin-left: 370px;
 }
-.button>input{
+.update-button>input{
   border: none;
   background-color: black;
   border: 1px solid black;
   color: white;
   padding: 10px;
   width: 100px;
-  margin-left: 100px;
+  margin-left: 300px;
   border-radius: 10px;
 }
-.button>input:hover{
+.update-button>input:hover{
+ 
   background-color: white;
   color: black;
   border: 1px solid black;
   cursor: pointer;
-  
 }

@@ -1,57 +1,52 @@
-.container{
+.get-user-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
-  padding: 100px;
   background-color: black;
-  height: 50vh;
-  width: 500px;
-  border-radius: 10px;
+  height: 100vh;
 }
-.email-id,.button{
+.get-user-email-id,.get-user-button{
   padding: 20px 20px 0px 0px ;
 }
-.form-container{
-  background-color: aliceblue;
-  margin-top: -45px;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 230px;
+.get-user-form-container{
+  background-color: aqua;
+  width: 1000px;
+  height: 400px;
+  border-radius: 5px;
 }
-.form-container>h3{
- margin-left: 160px;
+.get-user-form-container>h3{
+  margin-left: 20px;
 }
-.button>input{
+.get-user-button>input{
   border: none;
   background-color: black;
-  border: 1px solid black;
   color: white;
-  padding: 10px;
   width: 100px;
-  margin-left: 90px;
-  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  margin-left: 200px;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 5px;
+ position: absolute;
 }
-.button>input:hover{
+.get-user-button>input:hover{
   background-color: white;
   color: black;
-  border: 1px solid black;
-  cursor: pointer;
 }
-.show-details{
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 220px;
-  color: black;
-  width: 450px;
-  height: 200px;
+.get-user-show-details{
   position: absolute;
+  margin-left: 400px;
+  background-color: white;
+  width: 500px;
+  height: 150px;
 }
-.show-first-name,.show-last-name,.show-email,.show-designation,.show-dob,.show-active{
-  font-size: 15px;
+.get-user-show-first-name,.get-user-show-last-name,.get-user-show-email,.get-user-show-designation,.get-user-show-dob,.get-user-show-active{
+  font-size: 12px;
   font-weight: 100;
 }
-.show-first-name,.show-last-name,.show-email,.show-designation,.show-dob,.show-active{
-  margin-top: 10px;
+.get-user-show-first-name,.get-user-show-last-name,.get-user-show-email,.get-user-show-designation,.get-user-show-dob,.get-user-show-active{
+  margin-top: 20px;
   margin-left: 10px;
 }

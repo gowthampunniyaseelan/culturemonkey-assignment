@@ -1,35 +1,32 @@
-.container{
+.migrate-container{
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
-  width: 1000px;
-  border-radius: 10px;
+  height: 100vh;
 }
-.email-id,.button{
+.migrate-email-id,.migrate-button{
   padding: 20px 20px 0px 0px ;
 }
-.company-id,.button{
+.migrate-company-id,.migrate-button{
   padding: 20px 20px 0px 0px ;
 }
-.form-container1{
-  background-color: aliceblue;
-  margin-top: -45px;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 0px;
-  font-weight: 100;
+.migrate-form-container1{
+  background-color: aqua;
+width: 400px;
+height: 300px;
+margin-left: 80px;
+border-radius: 5px;
 }
-.form-container2{
-  background-color: aliceblue;
-  margin-top: -45px;
-  padding: 20px;
-  font-weight: 100;
-  border-radius: 10px;
-  margin-left: 400px;
+.migrate-form-container2{
+  background-color: aqua;
+  margin-left: 300px;
+  width: 400px;
+  height: 300px;
+  border-radius: 5px;
 }
 
-.button>input{
+.migrate-button>input{
   border: none;
   background-color: black;
   border: 1px solid black;
@@ -39,36 +36,36 @@
   margin-left: 90px;
   border-radius: 10px;
 }
-.button>input:hover{
+.migrate-button>input:hover{
   background-color: white;
   color: black;
   border: 1px solid black;
   cursor: pointer;
 }
-.email-id{
-  margin-left: 0px;
+.migrate-email-id{
+  margin-left: 20px;
 }
 
-.company-id{
-  margin-left: 0px;
+.migrate-company-id{
+  margin-left: 20px;
 }
 
-.delete-button{
-  margin-top:250px;
-  margin-left:-625px;
+.migrate-delete-button{
+  margin-top:450px;
+  margin-left:-725px;
   border:1px solid white;
   background-color:white;
   width:200px;
   border-radius:10px;
 }
-.delete-button:hover{
+.migrate-delete-button:hover{
   border:1px solid white;
   background-color:black;
   cursor:pointer;
   color: white;
 }
 
-.button1>input{
+.migrate-button1>input{
   border: none;
   background-color: black;
   border: 1px solid black;

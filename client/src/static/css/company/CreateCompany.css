@@ -1,36 +1,35 @@
-.container{
+.create-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
-  padding: 100px;
   background-color: black;
-  height: 50vh;
-  width: 500px;
-  border-radius: 10px;
+  height: 100vh;
 }
-.company-id,.company-name,.address,.coordinates,.latitude,.longitude,.button{
-  padding: 20px 20px 0px 0px ;
+.create-company-id,.create-company-name,.create-address,.create-coordinates,.create-latitude,.create-longitude,.create-button{
+  padding: 10px 10px 10px 0px;
+  margin-left: 200px;
 }
-.form-container{
-  background-color: aliceblue;
-  margin-top: -45px;
-  padding: 20px;
-  border-radius: 10px;
+.create-form-container{
+background-color: aqua;
+width: 700px;
+height: 400px;
+border-radius: 5px;
+
 }
-.button>input{
-  border: none;
-  background-color: black;
-  border: 1px solid black;
-  color: white;
-  padding: 10px;
-  width: 100px;
-  margin-left: 100px;
-  border-radius: 10px;
+.create-button>input{
+ border: none;
+ background-color: black;
+ color: white;
+ width: 100px;
+ height: 50px;
+ display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+border-radius: 5px;
+position: absolute;
 }
-.button>input:hover{
+.create-button>input:hover{
   background-color: white;
   color: black;
-  border: 1px solid black;
-  cursor: pointer; 
 }

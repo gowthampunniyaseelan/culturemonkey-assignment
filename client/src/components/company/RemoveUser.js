@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/RemoveUser.css"
+import Navbar from "../nav/Navbar";
 function RemoveUser(){
   const[emailId,setEmailId] = useState("")
   async function removeUserFromCompany(e){
@@ -22,18 +23,21 @@ function RemoveUser(){
   }
 
   return (
-    <div className="container">
-    <form onSubmit={removeUserFromCompany} className="form-container">
+    <>
+    <Navbar/>
+    <div className="remove-container">
+    <form onSubmit={removeUserFromCompany} className="remove-form-container">
     <h3 style={{fontWeight:100}}>Remove the user</h3>
-    <div className="email-id">
+    <div className="remove-email-id">
     <label htmlFor="email" style={{fontWeight:100}}>EmailID </label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} />
     </div>
-    <div className="button">
+    <div className="remove-button">
       <input type="submit" value="Submit" />
     </div> 
     </form>
     </div>
+    </>
     )
 }
 export default RemoveUser;

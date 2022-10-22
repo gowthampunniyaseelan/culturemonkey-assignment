@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import "../../static/css/company/Migrate.css"
+import Navbar from "../nav/Navbar";
 export default function Migrate() {
 // Store the user Id
 const[storeId,setStoreId] = useState("");
@@ -90,7 +91,10 @@ function deleteUser(){
   })
 }
   return (
-    <div className="container">
+    <>
+      <Navbar/>
+   
+    <div className="migrate-container">
     <div style={{
       backgroundColor:"white",
       position:"absolute",
@@ -105,15 +109,15 @@ function deleteUser(){
     }}>Migration</h3>
     </div>
    
-    <form onSubmit={getUserdetails} className="form-container1">
+    <form onSubmit={getUserdetails} className="migrate-form-container1">
     <p style={{
-      marginLeft:40
+      marginLeft:20
     }}>Enter the email Id to get the user</p>
-    <div className="email-id">
+    <div className="migrate-email-id">
     <label htmlFor="email">User Email ID </label>
     <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} required />
     </div>
-    <div className="button">
+    <div className="migrate-button">
     <input disabled={togglefordeletebutton ? false : true ||  toggle ? true : false } type="submit" value="Submit" />
     </div>
     </form>
@@ -121,16 +125,18 @@ function deleteUser(){
     {/* Company Name to Migrate user */}
 
     
-    <form onSubmit={getThedetails} className="form-container2">
-    <p>Enter company Id to migrate the user</p>
-    <div className="company-id">
+    <form onSubmit={getThedetails} className="migrate-form-container2">
+    <p style={{
+      marginLeft:20
+    }}>Enter company Id to migrate the user</p>
+    <div className="migrate-company-id">
     <label htmlFor="companyName">CompanyID </label>
     <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} required/>
     </div>
-    {toggle ? <div className="button">
+    {toggle ? <div className="migrate-button">
       <input disabled={toggle} style={{opacity:0.4,backgroundColor:"white",color:"black"}} type="submit" value="Submit" />
       </div>
-      :<div className="button">
+      :<div className="migrate-button">
       <input type="submit" value="Submit" />
       </div>
       }
@@ -138,11 +144,12 @@ function deleteUser(){
     </form>
 <div>
 {
-  togglefordeletebutton ? <button className="delete-button" disabled={togglefordeletebutton} onClick={deleteUser} style={{opacity:0.4,backgroundColor:"white",color:"black"}}>Delete the duplicate user</button> 
-  : <button className="delete-button" onClick={deleteUser}>Delete the duplicate user</button>
+  togglefordeletebutton ? <button className="migrate-delete-button" disabled={togglefordeletebutton} onClick={deleteUser} style={{opacity:0.4,backgroundColor:"white",color:"black"}}>Delete the duplicate user</button> 
+  : <button className="migrate-delete-button" onClick={deleteUser}>Delete the duplicate user</button>
 }
 
 </div>
     
     </div>
+    </>
 )}

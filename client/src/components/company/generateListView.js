@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState,useEffect} from "react"
 import BingMapsReact from "bingmaps-react";
 import "../../static/css/company/GenerateListView.css"
+import Navbar from "../nav/Navbar";
 
 function GenerateListView(){
   // const[latitude,setLatitude] = useState("")
@@ -27,9 +28,12 @@ function GenerateListView(){
     }
   }
   return (
+    <>
+      <Navbar/>
+   
     <div>
-     <table class="styled-table">
-        <thead>
+     <table className="table">
+        <thead className="head">
           <tr>
             <th>Company ID</th>
             <th>Company Name</th>
@@ -37,9 +41,9 @@ function GenerateListView(){
             {/* <th>Coordinates</th> */}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table-body">
        {showCompany.map(show=>(
-        <tr>
+        <tr key={show.company_id}>
           <td>{show.company_id}</td>
           <td>{show.company_name}</td>
             {/* <td>{show.company_address}</td> */}
@@ -61,6 +65,7 @@ function GenerateListView(){
     </tbody>
     </table>
     </div>
+    </>
     )
 }
 export default GenerateListView;

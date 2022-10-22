@@ -1,57 +1,53 @@
-.container{
+.get-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
-  padding: 100px;
   background-color: black;
-  height: 50vh;
-  width: 500px;
-  border-radius: 10px;
+  height: 100vh;
 }
-.company-id,.button{
+.get-company-id,.get-button{
   padding: 20px 20px 0px 0px ;
 }
-.form-container{
-  background-color: aliceblue;
-  margin-top: -45px;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 90px;
+.get-form-container{
+  background-color: aqua;
+  width: 1000px;
+  height: 400px;
+  border-radius: 5px;
 }
-.form-container>h3{
- margin-left: 60px;
+.get-form-container>h3{
+margin-left: 20px;
 }
-.button>input{
+.get-button>input{
   border: none;
   background-color: black;
-  border: 1px solid black;
   color: white;
-  padding: 10px;
   width: 100px;
-  margin-left: 90px;
-  border-radius: 10px;
+  height: 50px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 5px;
+ position: absolute;
 }
-.button>input:hover{
+.get-button>input:hover{
   background-color: white;
   color: black;
-  border: 1px solid black;
-  cursor: pointer;
 }
-.show-details{
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 220px;
-  color: black;
-  width: 450px;
-  height: 200px;
+.get-show-details{
   position: absolute;
+  margin-left: 400px;
+  background-color: white;
+  width: 400px;
 }
-.show-company-id,.show-company-name,.show-company-address,.show-company-latitude,.show-company-longitude{
-  font-size: 19px;
+.get-show-company-id,.get-show-company-name,.get-show-company-address,.get-show-company-latitude,.get-show-company-longitude{
+  font-size: 15px;
   font-weight: 100;
 }
-.show-company-id,.show-company-name,.show-company-address,.show-company-latitude,.show-company-longitude{
+.get-show-company-id,.get-show-company-name,.get-show-company-address,.get-show-company-latitude,.get-show-company-longitude{
   margin-top: 10px;
   margin-left: 10px;
+}
+.get-company-id{
+  margin-left: 20px;
 }

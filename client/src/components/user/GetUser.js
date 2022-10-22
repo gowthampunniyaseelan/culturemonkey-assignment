@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react"
 import "../../static/css/user/GetUser.css"
+import Navbar from "../nav/Navbar";
 function GetUser(){
   const[userId,setUserId] = useState("")
   const[showFirstName,setShowFirstName] = useState([])
@@ -37,31 +38,34 @@ function GetUser(){
     setShowActive(value.active)
   }
   return (
-    <div className="container">
-    <form onSubmit={getUserdetails}  className="form-container">
+    <>
+  <Navbar/>
+    <div className="get-user-container">
+    <form onSubmit={getUserdetails}  className="get-user-form-container">
     <h3 style={{fontWeight:100}}>Get the user</h3>
-    <div className="email-id">
-    <label htmlFor="email" style={{fontWeight:100}}>User Email ID </label>
+    <div className="get-user-email-id">
+    <label htmlFor="email" style={{fontWeight:100,marginLeft:20}}>User Email ID </label>
     <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
     </div>  
-    <div className="button">
+    <div className="get-user-button">
     <input type="submit" value="Submit" />
     </div>
     </form>
-    <div className="show-details">
-    <p className="show-first-name">First Name - {showFirstName}</p>
+    <div className="get-user-show-details">
+    <p className="get-user-show-first-name">First Name - {showFirstName}</p>
     <hr />
-    <p className="show-last-name">Last Name - {showLastName}</p>
+    <p className="get-user-show-last-name">Last Name - {showLastName}</p>
     <hr />
-    <p className="show-email">Email - {showEmail}</p>
+    <p className="get-user-show-email">Email - {showEmail}</p>
     <hr />
-    <p className="show-designation">Designation - {showDesignation}</p>
+    <p className="get-user-show-designation">Designation - {showDesignation}</p>
     <hr />
-    <p className="show-dob">D-O-B - {showDateOfBirth}</p>
+    <p className="get-user-show-dob">D-O-B - {showDateOfBirth}</p>
     <hr />
-    <p className="show-active">Active - {String(showActive)}</p>
+    <p className="get-user-show-active">Active - {String(showActive)}</p>
     </div> 
     </div>
+    </>
     )
 }
 export default GetUser;

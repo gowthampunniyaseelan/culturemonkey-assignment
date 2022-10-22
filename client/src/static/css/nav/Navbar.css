@@ -1,0 +1,19 @@
+.nav-container{
+background-color: black;
+width:100vw;
+height: 40px;
+position: absolute;
+margin-top:0;
+}
+p{
+  text-align: left;
+  display: inline;
+}
+a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+nav{
+  margin-top: 10px;
+}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/GetCompany.css"
+import Navbar from "../nav/Navbar";
 function GetCompany(){
   const[companyId,setCompanyId] = useState("")
   const[showCompanyId,setShowCompanyId] = useState("")
@@ -28,11 +29,13 @@ function GetCompany(){
     }
   }
   return (
-    <div className="container">
-    <form onSubmit={getThedetails} className="form-container">
+    <>
+    <Navbar/>
+    <div className="get-container">
+    <form onSubmit={getThedetails} className="get-form-container">
     <h3 style={{fontWeight:100}}>Get the company</h3>
-    <div className="company-id">
-    <label htmlFor="companyName" style={{fontWeight:100}}>CompanyID </label>
+    <div className="get-company-id">
+    <label htmlFor="get-companyName" style={{fontWeight:100}}>CompanyID </label>
       <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
     </div>
     <div className="button">
@@ -40,19 +43,19 @@ function GetCompany(){
     </div> 
     </form>
 
-    <div className="show-details">
-    <p className="show-company-id">Company ID: {showCompanyId}</p>
+    <div className="get-show-details">
+    <p className="get-show-company-id">Company ID: {showCompanyId}</p>
     <hr />
-    <p className="show-company-name">Company Name: {showCompanyName}</p>
+    <p className="get-show-company-name">Company Name: {showCompanyName}</p>
     <hr />
-    <p className="show-company-address">Address :{showCompanyAddress}</p>
+    <p className="get-show-company-address">Address :{showCompanyAddress}</p>
     <hr />
-    <p className="show-company-latitude">Latitude: {showCompanyLatitude}</p> 
+    <p className="get-show-company-latitude">Latitude: {showCompanyLatitude}</p> 
     <hr />
-    <p className="show-company-longitude">Longitude: {showCompanyLongitude} </p>
+    <p className="get-show-company-longitude">Longitude: {showCompanyLongitude} </p>
     </div>
-    
     </div>
+    </>
     )
 }
 export default GetCompany;

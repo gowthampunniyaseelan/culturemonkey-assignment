@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState,useEffect} from "react"
 import "../../static/css/user/GenerateUserListView.css"
+import Navbar from "../nav/Navbar";
 function GenerateUserListView(){
   const[showUser,setShowUser] = useState([]);
   const[temp,setTemp] = useState([]);
@@ -23,6 +24,8 @@ function GenerateUserListView(){
     }
   }
   return (
+    <>
+  <Navbar/>
     <div>
      <table class="styled-table">
         <thead>
@@ -38,7 +41,7 @@ function GenerateUserListView(){
         <tbody>
       {
         showUser.map(show=>(
-          <tr style={{marginTop:-100}}>
+          <tr>
             <td>{show.first_name}</td>
             <td>{show.last_name}</td>
             <td>{show.email}</td>
@@ -50,6 +53,7 @@ function GenerateUserListView(){
     </tbody>
     </table>
     </div>
+    </>
     )
 }
 export default GenerateUserListView;

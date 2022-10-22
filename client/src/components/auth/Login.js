@@ -12,7 +12,7 @@ export default function Login() {
       // console.log(result);
       if(result.data){
         const {data} = result
-        window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
        const temp =  window.localStorage.getItem("emailId",data.email)
        setLocalStorage(temp)
         alert("Login Successful")

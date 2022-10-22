@@ -5,7 +5,7 @@ export default function Navbar() {
   const Navigate = useNavigate()
   function logOut(){
     window.localStorage.removeItem("emailId")
-    Navigate("/")
+    Navigate("/login")
   }
   return (
     <div className='nav-container'>

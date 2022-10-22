@@ -15,27 +15,29 @@ import Login from "./components/auth/Login"
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Routes
+  Routes,
+  Navigate
 } from "react-router-dom";
+
 function App() {
+  const temp = window.localStorage.getItem("emailId")
   return(
     <>
     <Router>
     <Routes>
     <Route path="/" element={<SignUp/>}/>
     <Route path="/login" element={<Login/>}/>
-    <Route path="/create-company" element={<CreateCompany/>}/> 
-    <Route path="/get-company" element={<GetCompany/>}/>
-    <Route path="/update-company" element={<UpdateCompany/>}/>
-    <Route path="/list-company" element={<GenerateListView/>}/>
-    <Route path="/add-user" element={<AddUser/>}/>
-    <Route path="/remove-user" element={<RemoveUser/>}/>
-    <Route path="/delete-company" element={<DeleteCompany/>}/>
-    <Route path="/list-user" element={<GenerateUserListView/>}/>
-    <Route path="/get-user" element={<GetUser/>}/>
-    <Route path="/update-user" element={<UpdateUser/>}/>
-    <Route path="/migrate" element={<Migrate/>}/>
+    <Route path="/create-company" element={temp ? <CreateCompany/> : <Navigate to="/"/>}/> 
+    <Route path="/get-company" element={temp ? <GetCompany/> : <Navigate to="/"/>}/>
+    <Route path="/update-company" element={temp ? <UpdateCompany/> : <Navigate to="/"/>}/>
+    <Route path="/list-company" element={temp ? <GenerateListView/>: <Navigate to="/"/>}/>
+    <Route path="/add-user" element={temp ? <AddUser/> : <Navigate to="/"/>}/>
+    <Route path="/remove-user" element={temp ? <RemoveUser/>: <Navigate to="/"/>}/>
+    <Route path="/delete-company" element={temp ?<DeleteCompany/>: <Navigate to="/"/>}/>
+    <Route path="/list-user" element={temp ?<GenerateUserListView/>: <Navigate to="/"/>}/>
+    <Route path="/get-user" element={temp ? <GetUser/>: <Navigate to="/"/>}/>
+    <Route path="/update-user" element={temp ? <UpdateUser/>: <Navigate to="/"/>}/>
+    <Route path="/migrate" element={temp ? <Migrate/>: <Navigate to="/"/> }/>
     </Routes>
     </Router> 
     </>

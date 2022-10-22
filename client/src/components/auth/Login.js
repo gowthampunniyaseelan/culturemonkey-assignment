@@ -13,7 +13,7 @@ export default function Login() {
         const {data} = result
        const temp =  window.localStorage.getItem("emailId",data.email)
        setLocalStorage(temp)
-        // alert(data.message)
+        alert("Login Successful")
         // setNavigate(true)
       }
     })

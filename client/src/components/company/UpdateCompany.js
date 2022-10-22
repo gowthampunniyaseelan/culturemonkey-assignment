@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import axios from "axios";
 import "../../static/css/company/UpdateCompany.css"
 import Navbar from '../nav/Navbar';
@@ -7,18 +7,14 @@ export default function UpdateCompany() {
   const[company_id,setCompanyId] = useState("")
   const[company_name,setName] = useState("")
   const[company_address,setAddress] = useState("")
-  // const[coordinates,setCoordinates] = useState("")
   const[latitude,setLatitude] = useState("")
   const[longitude,setLongitude] = useState("")
-  const[toggleMessage,setToggleMessage] = useState(false);
-
   async function postThedetails(e){
     e.preventDefault();
     if(company_name && company_id){
       postCompanyName()
       setCompanyId("")
       setName("")
-
     }
     if(company_address && company_id){
       postCompanyAddress()
@@ -35,44 +31,37 @@ export default function UpdateCompany() {
   }
 
  async function postCompanyName(){
-  // if(company_name && company_id !== null){
     try{
       await axios.put(`/company-management/companies/${company_id}`,{
         company_name:company_name
       }).then(()=>{
-        setToggleMessage(true)
+        alert("Updated companyName")
       })
     }catch(err){
       console.log(err);
-    // }
   }
   }
   async function postCompanyAddress(){
-    // if(company_address && company_id !== null){
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           company_address:company_address
         }).then(()=>{
-          setToggleMessage(true)
+        alert("Updated Company Address")
         })
       }catch(err){
         console.log(err);
-      // }
     }
  
   }
   async function postCompanyLatitudeAndLongitude(){
- 
-    // if(coordinates && company_id !== null){
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           coordinates:[latitude,longitude]
         }).then(()=>{
-          setToggleMessage(true)
+        alert("Updated Latitude and Longitude")
         })
       }catch(err){
         console.log(err);
-      // }
     }
   }
   return (

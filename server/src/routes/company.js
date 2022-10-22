@@ -19,7 +19,7 @@ router.delete("/companies/:id",deleteCompany)
 router.put("/user-management/users/:id",addUser)
 router.delete("/user-management/users/:id",removeUser)
 
-// Migrating
+// Migration
 router.get("/user-management/:id",pickUser)
 router.put("/user-management/:id",moveUser)
 router.delete("/user-management/:id",deleteUser)

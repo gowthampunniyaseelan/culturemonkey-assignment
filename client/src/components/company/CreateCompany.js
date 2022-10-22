@@ -6,7 +6,6 @@ function CreateCompany(){
   const[company_id,setCompanyId] = useState("")
   const[company_name,setName] = useState("")
   const[company_address,setAddress] = useState("")
-  // const[coordinates,setCoordinates] = useState(null)
   const[latitude,setLatitude] = useState("")
   const[longitude,setLongitude] = useState("")
 
@@ -17,7 +16,6 @@ function CreateCompany(){
     setName("")
     setLatitude("")
     setLongitude("")
-    // setCoordinates("")
     setAddress("")
     try{
      await axios.post("/company-management",{

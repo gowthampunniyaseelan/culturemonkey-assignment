@@ -50,70 +50,68 @@ export default function UpdateUser() {
   }
 
  async function postFirstName(){
-  // if(first_name && emailId !== null){
     try{
       await axios.put(`/user-management/user-details/users/${emailId}`,{
         first_name:first_name
-      }).then((result)=>console.log(result))
+      }).then(()=>alert("Successfully updated the first name"))
     }catch(err){
       console.log(err);
     }
-  // }
   }
   async function postLastName(){
-    // if(last_name && emailId !== null){
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           last_name:last_name
+        }).then(()=>{
+          alert("Successfully updated the last name")
         })
       }catch(err){
         console.log(err);
       }
-    // }
   }
   async function postEmail(){
-    // if(email && emailId !== null){
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           email:email
+        }).then(()=>{
+          alert("Successfully updated the email")
         })
       }catch(err){
         console.log(err);
       }
-    // }
   }
   async function postDesignation(){
-      // if(designation && emailId !== null){
         try{
           await axios.put(`/user-management/user-details/users/${emailId}`,{
             designation:designation
+          }).then(()=>{
+            alert("Successfully updated the designation")
           })
         }catch(err){
           console.log(err);
         }
-      // }
     }
     async function postDateOfBirth(){
-        // if(date_of_birth && emailId !== null){
           try{
             await axios.put(`/user-management/user-details/users/${emailId}`,{
               date_of_birth:date_of_birth
+            }).then(()=>{
+              alert("Successfully updated date of birth")
             })
           }catch(err){
             console.log(err);
           }
-        // }
       }
       async function postActive(){
-          // if(active && emailId !== null){
             try{
               await axios.put(`/user-management/user-details/users/${emailId}`,{
                 active:active
+              }).then(()=>{
+                alert("Successfully updated the active")
               })
             }catch(err){
               console.log(err);
             }
-          // }
         }
   return (
 <>

@@ -1,4 +1,3 @@
-import "./App.css"
 import CreateCompany from "./components/company/CreateCompany"
 import GetCompany from "./components/company/GetCompany";
 import GenerateListView from "./components/company/GenerateListView";
@@ -12,7 +11,6 @@ import UpdateUser from "./components/user/UpdateUser";
 import Migrate from "./components/company/Migrate";
 import SignUp from "./components/auth/SignUp"
 import Login from "./components/auth/Login"
-// import Navbar from "./components/nav/Navbar";
 import {
   BrowserRouter as Router,
   Route,

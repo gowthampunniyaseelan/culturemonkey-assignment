@@ -20,7 +20,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.first_name":req.body.first_name
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated First Name Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
@@ -32,7 +32,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.last_name":req.body.last_name
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated Last Name Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
@@ -44,7 +44,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.designation":req.body.designation
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated Designation Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
@@ -56,7 +56,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.date_of_birth":req.body.date_of_birth
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated Date of Birth Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
@@ -68,7 +68,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.active":true
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated Active Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
@@ -80,23 +80,23 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
           "users.$.active":false
         }
       }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
+        res.status(201).json({message:"Updated Active Successfully"})
       }).catch(()=>{
         res.status(404).json({message:"No Content"})
       })
      }
   
-     if(req.body.email){
-       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-        $set:{
-          "users.$.email":req.body.email
-        }
-      }).then(()=>{
-        res.status(201).json({message:"Updated Successfully"})
-      }).catch(()=>{
-        res.status(404).json({message:"No Content"})
-      })
-     }  
+    //  if(req.body.email){
+    //    CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+    //     $set:{
+    //       "users.$.email":req.body.email
+    //     }
+    //   }).then(()=>{
+    //     res.status(201).json({message:"Updated email Successfully"})
+    //   }).catch(()=>{
+    //     res.status(404).json({message:"No Content"})
+    //   })
+    //  }  
   }
 })
   

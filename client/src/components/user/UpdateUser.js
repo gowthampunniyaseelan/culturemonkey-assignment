@@ -175,10 +175,10 @@ export default function UpdateUser() {
     <input type="text" value={active} onChange={(e)=>setActive(e.target.value)} />
     </div> 
 
-    <div className='update-user-email'>
-    <label htmlFor="name">Email </label>
+    {/* <div className='update-user-email'>
+    <label htmlFor="name">Change Email ID </label>
     <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-    </div>
+    </div> */}
 
     <div className='update-user-button'>
     <input type="submit" />

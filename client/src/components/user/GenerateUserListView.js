@@ -4,20 +4,15 @@ import "../../static/css/user/GenerateUserListView.css"
 import Navbar from "../nav/Navbar";
 function GenerateUserListView(){
   const[showUser,setShowUser] = useState([]);
-  const[temp,setTemp] = useState([]);
 
   useEffect(()=>{
     getUserdetails()
-  })
+  },[])
 
   async function getUserdetails(){
     try{
      const {data} = await axios.get("/user-management/user-details/users")
-     console.log("This is user data",data);
-     data.map(value=>(
-      setTemp(value.users)
-     ))
-     setShowUser(temp)
+     setShowUser(data)
      console.log(showUser);
     }catch(err){
       console.log(err);
@@ -27,7 +22,7 @@ function GenerateUserListView(){
     <>
   <Navbar/>
     <div>
-     <table class="styled-table">
+     <table className="styled-table">
         <thead>
           <tr>
             <th>First Name</th>
@@ -41,13 +36,46 @@ function GenerateUserListView(){
         <tbody>
       {
         showUser.map(show=>(
+          <tr key={show.users.map((value)=>(
+            value.email
+        ))}>
+          <td>{show.users.map((value)=>(
+            <tr>
+            <td>{value.first_name}</td>
+            </tr>
+        ))}</td>
+        <td>{show.users.map((value)=>(
+            <tr>
+            <td>{value.last_name}</td>
+            </tr>
+        ))}</td>
+        <td>{show.users.map((value)=>(
           <tr>
-            <td>{show.first_name}</td>
-            <td>{show.last_name}</td>
-            <td>{show.email}</td>
-            <td>{show.designation}</td>
-            <td>{show.date_of_birth}</td>
-            <td>{String(show.active)}</td>
+            <td>{ value.email}</td>
+          </tr>
+           
+        ))}</td>
+        <td>{show.users.map((value)=>(
+          <tr>
+            <td>{value.designation}</td>
+          </tr>
+            
+        ))}</td>
+        <td>{show.users.map((value)=>(
+          <tr>
+            <td>
+              {value.date_of_birth}
+            </td>
+          </tr>
+            
+        ))}</td>
+        <td>{show.users.map((value)=>(
+          <tr>
+            <td>
+              {String(value.active)}
+            </td>
+          </tr>  
+        ))}</td>
           </tr>
       ))}
     </tbody>

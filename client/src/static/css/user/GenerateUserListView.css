@@ -1,6 +1,6 @@
 .styled-table {
   border-collapse: collapse;
-  font-size: 0.9em;
+  font-size: 10px;
   font-family: sans-serif;
   width: 100vw;
   position: absolute;
@@ -14,7 +14,10 @@
 }
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 5px 6px;
+}
+.styled-table th{
+  padding: 5px 12px;
 }
 .styled-table tbody td{
   height: -100px;
@@ -27,6 +30,6 @@
   background-color: #f3f3f3;
 }
 
-.styled-table tbody tr:last-of-type {
+/* .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
-}
+} */

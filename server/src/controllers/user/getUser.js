@@ -5,7 +5,7 @@ module.exports = async function(req,res){
         res.status(200).json(result)
     }
     else{
-        res.status(404).json({message:"Company Not Available"})
+        res.status(404).json({message:"User Not Available"})
     }
  })
 }

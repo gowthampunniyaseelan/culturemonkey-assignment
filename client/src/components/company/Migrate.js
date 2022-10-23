@@ -34,7 +34,7 @@ const[storeId,setStoreId] = useState("");
       data.users.map((value)=>(
         storeDetails(value)
       ))  
-      alert(data.message) 
+      alert("Success") 
      }).catch((err)=>{
       const {response}  = err
         alert(response.data.message)
@@ -65,15 +65,14 @@ const[storeId,setStoreId] = useState("");
         date_of_birth:date_of_birth,
         active:active
       }).then((result)=>{
-        if(result.data){
           const {data} = result
           alert(data.message)
           window.location.reload();
           console.log(result);
-        }else{
-          alert("Company ID Not Available")
-          window.location.reload();
-        }
+      }).catch((err)=>{
+        const {response} = err
+        const {data} = response
+        alert(data.message)
       })
       setCompanyId("")
     }catch(err){

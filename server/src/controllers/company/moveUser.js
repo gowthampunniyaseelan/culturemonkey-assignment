@@ -14,7 +14,6 @@ module.exports = async function(req,res){
       }
     }
   ).then((result)=>{
-    console.log(result);
     if(result.modifiedCount>=1){
       res.status(201).json({message:"Successfully Added"})
     }else{

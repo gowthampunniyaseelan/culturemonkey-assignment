@@ -34,22 +34,28 @@ export default function UpdateCompany() {
     try{
       await axios.put(`/company-management/companies/${company_id}`,{
         company_name:company_name
-      }).then(()=>{
-        alert("Updated companyName")
+      }).then((result)=>{
+        const {data} = result
+        alert(data.message)
+      }).catch((err)=>{
+        const {response}  = err
+        alert(response.data.message)
       })
     }catch(err){
-      console.log(err);
+     console.log(err);
   }
   }
   async function postCompanyAddress(){
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           company_address:company_address
-        }).then(()=>{
-        alert("Updated Company Address")
+        }).then((result)=>{
+          const {data} = result
+          alert(data.message)
         })
       }catch(err){
-        console.log(err);
+        const {response}  = err
+        alert(response.data.message)
     }
  
   }
@@ -57,11 +63,13 @@ export default function UpdateCompany() {
       try{
         await axios.put(`/company-management/companies/${company_id}`,{
           coordinates:[latitude,longitude]
-        }).then(()=>{
-        alert("Updated Latitude and Longitude")
+        }).then((result)=>{
+          const {data} = result
+          alert(data.message)
         })
       }catch(err){
-        console.log(err);
+        const {response}  = err
+        alert(response.data.message)
     }
   }
   return (

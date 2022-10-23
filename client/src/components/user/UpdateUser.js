@@ -53,7 +53,13 @@ export default function UpdateUser() {
     try{
       await axios.put(`/user-management/user-details/users/${emailId}`,{
         first_name:first_name
-      }).then(()=>alert("Successfully updated the first name"))
+      }).then((result)=>{
+      const {data} = result
+      alert(data.message)
+    }).catch((err)=>{
+        const {response}  = err
+        alert(response.data.message)
+      })
     }catch(err){
       console.log(err);
     }
@@ -62,8 +68,12 @@ export default function UpdateUser() {
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           last_name:last_name
-        }).then(()=>{
-          alert("Successfully updated the last name")
+        }).then((result)=>{
+          const {data} = result
+          alert(data.message)
+        }).catch((err)=>{
+        const {response}  = err
+        alert(response.data.message)
         })
       }catch(err){
         console.log(err);
@@ -73,8 +83,12 @@ export default function UpdateUser() {
       try{
         await axios.put(`/user-management/user-details/users/${emailId}`,{
           email:email
-        }).then(()=>{
-          alert("Successfully updated the email")
+        }).then((result)=>{
+          const {data} = result
+          alert(data.message)
+        }).catch((err)=>{
+          const {response}  = err
+          alert(response.data.message)
         })
       }catch(err){
         console.log(err);
@@ -84,8 +98,12 @@ export default function UpdateUser() {
         try{
           await axios.put(`/user-management/user-details/users/${emailId}`,{
             designation:designation
-          }).then(()=>{
-            alert("Successfully updated the designation")
+          }).then((result)=>{
+          const {data} = result
+          alert(data.message)
+          }).catch((err)=>{
+            const {response}  = err
+          alert(response.data.message)
           })
         }catch(err){
           console.log(err);
@@ -95,8 +113,12 @@ export default function UpdateUser() {
           try{
             await axios.put(`/user-management/user-details/users/${emailId}`,{
               date_of_birth:date_of_birth
-            }).then(()=>{
-              alert("Successfully updated date of birth")
+            }).then((result)=>{
+              const {data} = result
+              alert(data.message)
+            }).catch((err)=>{
+              const {response}  = err
+              alert(response.data.message)
             })
           }catch(err){
             console.log(err);
@@ -106,8 +128,12 @@ export default function UpdateUser() {
             try{
               await axios.put(`/user-management/user-details/users/${emailId}`,{
                 active:active
-              }).then(()=>{
-                alert("Successfully updated the active")
+              }).then((result)=>{
+                const {data} = result
+              alert(data.message)
+              }).catch((err)=>{
+                const {response}  = err
+              alert(response.data.message)
               })
             }catch(err){
               console.log(err);

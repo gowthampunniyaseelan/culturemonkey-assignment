@@ -6,7 +6,7 @@ module.exports = function(req,res){
   if(result){
     res.status(200).json(result)
   }else{
-    res.status(204).json({message:"Company not available"})
+    res.status(404).json({message:"Company not available"})
   }
  })
 }

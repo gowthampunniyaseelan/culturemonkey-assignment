@@ -19,9 +19,12 @@ function GetCompany(){
         setShowCompanyAddress(result.data.company_address)
         setShowCompanyLatitude(result.data.coordinates[0])
         setShowCompanyLongitude(result.data.coordinates[1])
-        alert("Success")
-      }).catch(()=>{
-        alert("Company ID not available")
+        const {data} = result
+        alert(data.message) 
+        window.location.reload()
+      }).catch((err)=>{
+        const {response}  = err
+        alert(response.data.message)
         window.location.reload()
       })
     }catch(err){

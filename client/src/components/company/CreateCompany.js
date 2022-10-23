@@ -24,12 +24,10 @@ function CreateCompany(){
         company_address:company_address,
         coordinates:[latitude,longitude]
       }).then((result)=>{
-        console.log(result);
         const {data} = result
         alert(data.message)
-      }).catch((result)=>{
-        console.log(result);
-        const {response} = result
+      }).catch((err)=>{
+        const {response} = err
         const{data} = response
         alert(data.message)
       })

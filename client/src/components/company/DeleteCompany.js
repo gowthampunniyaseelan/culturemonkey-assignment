@@ -10,12 +10,10 @@ function DeleteCompany(){
     try{
       await axios.delete(`/company-management/companies/${companyId}`).then((result)=>{
         const {data} = result
-        if(data.message === "Successfully Deleted"){
-          alert(data.message)
-        }else{
-          alert("No Company Available")
-        }
-        console.log(result);
+        alert(data.message) 
+      }).catch((err)=>{
+        const {response}  = err
+        alert(response.data.message)
       })
     }
     catch(err){

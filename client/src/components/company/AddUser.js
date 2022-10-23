@@ -28,11 +28,11 @@ function AddUser(){
       active:active
       }).then((res)=>{
         const {data} = res
-        if(data.message === "Successfully Added"){
-          alert(data.message)
-        }else{
-          alert("Company ID not available")
-        }
+        alert(data.message)
+      }).catch((err)=>{
+        const {response} = err
+        const{data} = response
+        alert(data.message)
       })
     }catch(err){
       console.log(err);

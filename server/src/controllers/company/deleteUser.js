@@ -12,7 +12,7 @@ module.exports = async function(req,res){
     if(result.modifiedCount>=1){
       res.status(202).json({message:"Successfully Deleted"})
     }else{
-      res.status(204).json({message:"No User Available"})
+      res.status(404).json({message:"No User Available"})
     } 
   })
 }

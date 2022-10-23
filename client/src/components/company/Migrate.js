@@ -28,16 +28,17 @@ const[storeId,setStoreId] = useState("");
     setStoreId(userId)
     setUserId("")
     try{
-     const {data} =  await axios.get(`company-management/user-management/${userId}`)
-     if(data){
+     await axios.get(`company-management/user-management/${userId}`).then((result)=>{
+      const {data} =  result
       setToggleForDeleteButton(false)
       data.users.map((value)=>(
         storeDetails(value)
-      ))   
-      alert("Success")
-     }else{
-      alert("No User Available")
-     }
+      ))  
+      alert(data.message) 
+     }).catch((err)=>{
+      const {response}  = err
+        alert(response.data.message)
+     })
     }catch(err){
       console.log(err);
     }

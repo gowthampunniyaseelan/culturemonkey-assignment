@@ -17,7 +17,7 @@ module.exports = async function(req,res){
       res.status(201).json({message:"Successfully Added"})
     }
     else{
-      res.status(204).json({message:"Company ID not available"})
+      res.status(404).json({message:"Company ID not available"})
     }
   })
 }

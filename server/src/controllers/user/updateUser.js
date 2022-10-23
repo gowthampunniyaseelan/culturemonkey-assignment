@@ -7,88 +7,97 @@ module.exports = async function(req,res){
   }else if(req.body.active === "false"){
     check = false
   }
-
-  if(req.body.first_name){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.first_name":req.body.first_name
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
+CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
+  if(err){
+    console.log(err);
   }
-
-   if(req.body.last_name){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.last_name":req.body.last_name
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }
-
-   if(req.body.designation){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.designation":req.body.designation
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }
-
-   if(req.body.date_of_birth){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.date_of_birth":req.body.date_of_birth
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }
-
-   if(check === true){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.active":true
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }
-
-   if(check === false){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.active":false
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }
-
-   if(req.body.email){
-    await CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
-      $set:{
-        "users.$.email":req.body.email
-      }
-    }).then(()=>{
-      res.status(201).json({message:"Updated Successfully"})
-    }).catch(()=>{
-      res.status(204).json({message:"No Content"})
-    })
-   }  
+  if(!result){
+    res.status(404).json({message:"No user available"})
+  }else{
+    if(req.body.first_name){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.first_name":req.body.first_name
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+    }
+  
+     if(req.body.last_name){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.last_name":req.body.last_name
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }
+  
+     if(req.body.designation){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.designation":req.body.designation
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }
+  
+     if(req.body.date_of_birth){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.date_of_birth":req.body.date_of_birth
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }
+  
+     if(check === true){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.active":true
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }
+  
+     if(check === false){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.active":false
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }
+  
+     if(req.body.email){
+       CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{
+        $set:{
+          "users.$.email":req.body.email
+        }
+      }).then(()=>{
+        res.status(201).json({message:"Updated Successfully"})
+      }).catch(()=>{
+        res.status(404).json({message:"No Content"})
+      })
+     }  
+  }
+})
+  
 }

@@ -14,16 +14,17 @@ function GetUser(){
     e.preventDefault();
     setUserId("")
     try{
-     const {data} =  await axios.get(`/user-management/user-details/users/${userId}`)
-     if(data){
-      data.users.map((value)=>(
-        storeDetails(value)
-      ))   
-      alert("Success")
-     }else{
-      alert("No User Available")
+     await axios.get(`/user-management/user-details/users/${userId}`).then((result)=>{
+      const {data} = result
+        alert(data.message) 
+        window.location.reload()
+     }).catch((err)=>{
+      const {response}  = err
+      alert(response.data.message)
       window.location.reload()
-     }
+     })
+    
+     
     }catch(err){
       console.log(err);
     }

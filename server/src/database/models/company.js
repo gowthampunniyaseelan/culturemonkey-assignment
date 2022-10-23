@@ -3,7 +3,7 @@ const companiesSchema = new mongoose.Schema({
   company_id: String,
   company_name:String,
   company_address:String,
-  coordinates:[],
+  coordinates:[String,String],
   users:[{
     first_name:String,
     last_name:String,

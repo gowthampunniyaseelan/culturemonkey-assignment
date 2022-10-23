@@ -1,6 +1,5 @@
 import axios from "axios";
 import {useState,useEffect} from "react"
-import BingMapsReact from "bingmaps-react";
 import "../../static/css/company/GenerateListView.css"
 import Navbar from "../nav/Navbar";
 import Map from "../util/Map";
@@ -50,19 +49,3 @@ function GenerateListView(){
     )
 }
 export default GenerateListView;
-
-
-
-
-
-  /* {<BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
-    height="200px"
-    mapOptions={{
-    navigationBarMode: "square",
-   }}
-   width="300px"
-   viewOptions={{
-   center: { latitude:"37.0902", longitude: "37.0902" },
-   mapTypeId: "color",
-   }}
-   />} */

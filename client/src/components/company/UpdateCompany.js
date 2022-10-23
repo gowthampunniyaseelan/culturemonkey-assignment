@@ -52,6 +52,9 @@ export default function UpdateCompany() {
         }).then((result)=>{
           const {data} = result
           alert(data.message)
+        }).catch((err)=>{
+          const {response}  = err
+          alert(response.data.message)
         })
       }catch(err){
         const {response}  = err
@@ -66,6 +69,9 @@ export default function UpdateCompany() {
         }).then((result)=>{
           const {data} = result
           alert(data.message)
+        }).catch((err)=>{
+          const {response}  = err
+          alert(response.data.message)
         })
       }catch(err){
         const {response}  = err

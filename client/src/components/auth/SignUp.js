@@ -19,6 +19,10 @@ export default function Home() {
         window.localStorage.setItem("emailId",emailId)
         setNavigate(true)
       }
+    }).catch((err)=>{
+      const {response} = err
+      const {data} = response
+      alert(data.message)
     })
   }
   return (

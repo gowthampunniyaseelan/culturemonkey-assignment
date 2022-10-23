@@ -9,15 +9,20 @@ export default function Login() {
   async function getUserDetails(e){
     e.preventDefault()
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
-      // console.log(result);
-      if(result.data){
+      console.log(result);
         const {data} = result
        window.localStorage.setItem("emailId",data.email)
-       const temp =  window.localStorage.getItem("emailId",data.email)
-       setLocalStorage(temp)
+       setTimeout(()=>{
+        const temp =  window.localStorage.getItem("emailId",data.email)
+        setLocalStorage(temp)
         alert("Login Successful")
+       },2000)
         // setNavigate(true)
-      }
+    }).catch((err)=>{
+      console.log(err);
+      const {response} = err
+      const {data} = response
+      alert(data.message)
     })
   }
   return (

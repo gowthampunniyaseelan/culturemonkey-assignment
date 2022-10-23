@@ -19,8 +19,7 @@ function GetCompany(){
         setShowCompanyAddress(result.data.company_address)
         setShowCompanyLatitude(result.data.coordinates[0])
         setShowCompanyLongitude(result.data.coordinates[1])
-        const {data} = result
-        alert(data.message) 
+        alert("Success")
       }).catch((err)=>{
         const {response}  = err
         alert(response.data.message)

@@ -71,7 +71,7 @@ const[storeId,setStoreId] = useState("");
           window.location.reload();
           console.log(result);
         }else{
-          alert("No Company ID Available")
+          alert("Company ID Not Available")
           window.location.reload();
         }
       })
@@ -87,7 +87,7 @@ function deleteUser(){
       alert(data.message)
       setToggle(false)
     }else{
-      alert("No user available")
+      alert("User Not available")
     } 
   })
 }

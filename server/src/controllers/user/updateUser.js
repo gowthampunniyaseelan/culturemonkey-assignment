@@ -12,7 +12,7 @@ CompanyModel.findOne({users:{$elemMatch:{email:req.params.id}}},(err,result)=>{
     console.log(err);
   }
   if(!result){
-    res.status(404).json({message:"No user available"})
+    res.status(404).json({message:"User Not available"})
   }else{
     if(req.body.first_name){
        CompanyModel.updateOne({users:{$elemMatch:{email:req.params.id}}},{

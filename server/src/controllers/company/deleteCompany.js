@@ -5,7 +5,7 @@ module.exports = async function(req,res){
     if(result.deletedCount>=1){
       res.status(202).json({message:"Successfully Deleted"})
     }else{
-      res.status(404).json({message:"No Company Available"})
+      res.status(404).json({message:"Company Not Available"})
     }   
   })
 }

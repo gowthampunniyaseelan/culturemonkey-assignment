@@ -4,7 +4,7 @@ module.exports = function(req,res){
   if(result){
     res.status(200).json(result)
   }else{
-    res.status(404).json({message:"No User Available"})
+    res.status(404).json({message:"User Not Available"})
   }
  })
 }

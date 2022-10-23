@@ -5,7 +5,7 @@ module.exports = async function(req,res){
         console.log(err);
     }
     if(!result){
-      res.status(404).json({message:"No Company ID Available"})
+      res.status(404).json({message:"Company Not ID Available"})
     }else{
       if(req.body.company_name){
       CompanyModel.updateOne({company_id:req.params.id},{

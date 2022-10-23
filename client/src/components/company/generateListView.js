@@ -3,6 +3,7 @@ import {useState,useEffect} from "react"
 import BingMapsReact from "bingmaps-react";
 import "../../static/css/company/GenerateListView.css"
 import Navbar from "../nav/Navbar";
+import Map from "../util/Map";
 
 function GenerateListView(){
   const[showCompany,setShowCompany] = useState([]);
@@ -28,7 +29,10 @@ function GenerateListView(){
           <tr>
             <th>Company ID</th>
             <th>Company Name</th>
-            <th>Address</th>
+            <th style={{
+              marginLeft:300,
+              position:"absolute"
+            }}>Address</th>
           </tr>
         </thead>
         <tbody>
@@ -36,18 +40,7 @@ function GenerateListView(){
         <tr key={show.company_id}>
           <td>{show.company_id}</td>
           <td>{show.company_name}</td>
-          <td>{<BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
-             height="50px"
-             mapOptions={{
-             navigationBarMode: "square",
-            }}
-            width="50px"
-            viewOptions={{
-            center: { latitude:show.coordinates[0], longitude: show.coordinates[1] },
-            mapTypeId: "color",
-            }}
-            />}
-          </td>
+          <td>{<Map value={{lat:Number(show.coordinates[0]),lng:Number(show.coordinates[1]),address:show.company_address}}/>}</td> 
         </tr>
     ))}
     </tbody>
@@ -57,3 +50,19 @@ function GenerateListView(){
     )
 }
 export default GenerateListView;
+
+
+
+
+
+  /* {<BingMapsReact bingMapsKey = {process.env.REACT_APP_BING_MAP_KEY}
+    height="200px"
+    mapOptions={{
+    navigationBarMode: "square",
+   }}
+   width="300px"
+   viewOptions={{
+   center: { latitude:"37.0902", longitude: "37.0902" },
+   mapTypeId: "color",
+   }}
+   />} */

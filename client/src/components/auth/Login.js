@@ -16,7 +16,7 @@ export default function Login() {
         const temp =  window.localStorage.getItem("emailId",data.email)
         setLocalStorage(temp)
         alert("Login Successful")
-       },2000)
+       },5000)
         // setNavigate(true)
     }).catch((err)=>{
       console.log(err);

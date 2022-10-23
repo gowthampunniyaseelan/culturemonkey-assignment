@@ -16,15 +16,18 @@ function GetUser(){
     try{
      await axios.get(`/user-management/user-details/users/${userId}`).then((result)=>{
       const {data} = result
-        alert(data.message) 
-        window.location.reload()
+      console.log(result);
+      if(data){
+        data.users.map((value)=>(
+          storeDetails(value)
+        ))   
+       alert("success")
+       }
      }).catch((err)=>{
+      console.log(err);
       const {response}  = err
       alert(response.data.message)
-      window.location.reload()
      })
-    
-     
     }catch(err){
       console.log(err);
     }

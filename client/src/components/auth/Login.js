@@ -12,8 +12,9 @@ export default function Login() {
       console.log(result);
         const {data} = result
        window.localStorage.setItem("emailId",data.email)
-       setTimeout(()=>{
+       
         const temp =  window.localStorage.getItem("emailId",data.email)
+        setTimeout(()=>{
         setLocalStorage(temp)
         alert("Login Successful")
        },5000)

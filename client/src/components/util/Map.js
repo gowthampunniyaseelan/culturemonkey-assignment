@@ -22,9 +22,9 @@ L.Marker.prototype.options.icon = DefaultIcon;
   <Marker  position={[props.value.lat, props.value.lng]}>
     <Popup position={[props.value.lat, props.value.lng]}>
       <div>
-        <h2>
+        <p>
         {props.value.address}
-        </h2>
+        </p>
       </div> 
     </Popup>
   </Marker>

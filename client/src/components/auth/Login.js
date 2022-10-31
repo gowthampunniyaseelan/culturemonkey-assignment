@@ -12,10 +12,10 @@ export default function Login() {
       console.log(result);
         const {data} = result
        window.localStorage.setItem("emailId",data.email) 
-        // setTimeout(()=>{
+        setTimeout(()=>{
         setLocalStorage(window.localStorage.getItem("emailId"))
         alert("Login Successful")
-      //  },5000)
+       },2000)
         // setNavigate(true)
     }).catch((err)=>{
       console.log(err);

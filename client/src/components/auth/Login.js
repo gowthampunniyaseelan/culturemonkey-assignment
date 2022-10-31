@@ -11,11 +11,9 @@ export default function Login() {
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
       console.log(result);
         const {data} = result
-       window.localStorage.setItem("emailId",data.email)
-       
-        const temp =  window.localStorage.getItem("emailId")
+       window.localStorage.setItem("emailId",data.email) 
         setTimeout(()=>{
-        setLocalStorage(temp)
+        setLocalStorage(window.localStorage.getItem("emailId"))
         alert("Login Successful")
        },5000)
         // setNavigate(true)

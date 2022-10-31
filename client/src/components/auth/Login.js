@@ -13,7 +13,7 @@ export default function Login() {
         const {data} = result
        window.localStorage.setItem("emailId",data.email)
        
-        const temp =  window.localStorage.getItem("emailId",data.email)
+        const temp =  window.localStorage.getItem("emailId")
         setTimeout(()=>{
         setLocalStorage(temp)
         alert("Login Successful")

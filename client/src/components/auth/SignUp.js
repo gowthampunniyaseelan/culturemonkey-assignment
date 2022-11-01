@@ -37,7 +37,7 @@ export default function Home() {
    </div>
    <div className='email-id'>
    <label htmlFor="name">Email ID </label>
-   <input type="text" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>
+   <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>
    </div>
    <div className='button'>
    <input type="submit" />

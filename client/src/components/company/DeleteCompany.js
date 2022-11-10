@@ -26,10 +26,10 @@ function DeleteCompany(){
     <Navbar/>
     <div className="delete-container">
     <form onSubmit={removeUserFromCompany} className="delete-form-container">
-    <h3 style={{fontWeight:700,marginLeft:20,marginTop:20}}>Delete Company</h3>
+    <h3 style={{marginLeft:20,marginTop:20}}>Delete Company</h3>
 
     <div className="delete-company-id">
-    <label htmlFor="companyName" style={{fontWeight:100}}>Company ID </label>
+    <label htmlFor="companyName">Company ID </label>
     <input type="text" value={companyId} onChange={(e)=>setCompanyId(e.target.value)} />
     </div>
 

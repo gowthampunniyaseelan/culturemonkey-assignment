@@ -1,43 +1,63 @@
-.remove-container{
+/* .remove-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
-}
-.remove-email-id,.remove-button{
-  padding: 20px 20px 0px 0px ;
+} */
+.remove-email-id{
+  padding: 10px 10px 10px 0px;
+  margin-top: 20px;
+  margin-left: 70px;
 }
 .remove-form-container{
-  background-color: aqua;
-  margin-top: 200px;
-  padding: 20px;
-  width: 500px;
-  border-radius: 10px;
-  margin-left: 370px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 350px;
+  width: 50vw;
+  height: 40vh;
+  border-radius: 5px;
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 30vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .remove-form-container>h3{
- margin-left: 160px;
+ margin-left: 20px;
+ margin-top: 20px;
 }
 .remove-button>input{
   border: none;
   background-color: black;
-  border: 1px solid black;
   color: white;
-  padding: 10px;
-  width: 100px;
-  margin-left: 100px;
-  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 30px;
+ margin-top: 30px;
+ margin-left: 400px;
+ position: absolute;
 }
 .remove-button>input:hover{
   background-color: white;
   color: black;
   border: 1px solid black;
   cursor: pointer;
-}
-.remove-email-id{
-  margin-left: 110px;
-}
-.remove-button{
-  margin-left: 80px;
 }

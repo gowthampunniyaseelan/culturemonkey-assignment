@@ -41,7 +41,7 @@ function CreateCompany(){
     <Navbar/>
     <div className="create-container">
     <form onSubmit={postThedetails} className="create-form-container">
-    <h3 style={{fontWeight:700,marginLeft:10}}>Create Company</h3>
+    <h3 style={{marginLeft:90,marginTop:30,position:"absolute"}}>Create Company</h3>
       <div className="create-company-id">
       <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />
@@ -57,9 +57,9 @@ function CreateCompany(){
       <input type="text" value={company_address} onChange={(e)=>setAddress(e.target.value)} required/>
       </div>
       
-      <div className="create-coordinates">
+      {/* <div className="create-coordinates">
       <label htmlFor="coordinates">Coordinates </label>
-      </div>
+      </div> */}
       <div className="create-latitude">
       <label htmlFor="latitude">Latitude </label>
       <input type="text" value={latitude} onChange={(e)=>setLatitude(e.target.value)} required/>

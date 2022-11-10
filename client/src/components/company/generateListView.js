@@ -21,29 +21,23 @@ function GenerateListView(){
   return (
     <>
       <Navbar/>
-   
-    <div>
-     <table class="styled-table">
-        <thead>
-          <tr>
-            <th>Company ID</th>
-            <th>Company Name</th>
-            <th style={{
-              marginLeft:300,
-              position:"absolute"
-            }}>Address</th>
-          </tr>
-        </thead>
-        <tbody>
-       {showCompany.map(show=>(
-        <tr key={show.company_id}>
-          <td>{show.company_id}</td>
-          <td>{show.company_name}</td>
-          <td>{<Map value={{lat:Number(show.coordinates[0]),lng:Number(show.coordinates[1]),address:show.company_address}}/>}</td> 
-        </tr>
+    <div className="container">
+    <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Company ID</div>
+      <div class="col col-2">Company Name</div>
+      <div class="col col-3">Address</div>
+    </li>
+    {showCompany.map(show=>(
+        <li class="table-row" key={show.company_id}>
+          <div style={{
+            marginLeft:50
+          }} data-label="Company ID">{show.company_id}</div>
+          <div data-label="Company Name">{show.company_name}</div>
+          <div data-label="Address">{<Map value={{lat:Number(show.coordinates[0]),lng:Number(show.coordinates[1]),address:show.company_address}}/>}</div> 
+        </li>
     ))}
-    </tbody>
-    </table>
+  </ul>
     </div>
      </>
     )

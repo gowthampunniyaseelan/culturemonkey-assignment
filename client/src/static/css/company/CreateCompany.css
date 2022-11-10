@@ -1,32 +1,80 @@
-.create-container{
+/* .create-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
+} */
+.create-company-id{
+  margin-top: 80px;
+  margin-left: 150px;
+  position: absolute;
 }
-.create-company-id,.create-company-name,.create-address,.create-coordinates,.create-latitude,.create-longitude,.create-button{
-  padding: 10px 10px 10px 0px;
-  margin-left: 200px;
+.create-company-name{
+  margin-top: 140px;
+  margin-left: 150px;
+  position: absolute;
+}
+.create-address{
+  margin-top: 200px;
+  margin-left: 150px;
+  position: absolute;
+}
+/* .create-coordinates{
+  margin-top: 280px;
+  margin-left: 150px;
+  position: absolute;
+} */
+.create-latitude{
+  margin-top: 260px;
+  margin-left: 150px;
+  position: absolute;
+}
+.create-longitude{
+  margin-top: 325px;
+  margin-left: 150px;
+  position: absolute;
 }
 .create-form-container{
-background-color: aqua;
-width: 700px;
-height: 400px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+position: absolute;
+margin-top: 20px;
+margin-left: 150px;
+width: 80vw;
+height: 90vh;
 border-radius: 5px;
 
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 50vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .create-button>input{
  border: none;
  background-color: black;
  color: white;
- width: 100px;
- height: 50px;
+ width: 200px;
+ height: 40px;
  display: flex;
 align-items: center;
 justify-content: center;
 cursor: pointer;
-border-radius: 5px;
+border-radius: 30px;
+margin-top: 400px;
+margin-left: 700px;
 position: absolute;
 }
 .create-button>input:hover{

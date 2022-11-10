@@ -1,33 +1,55 @@
-.delete-container{
+/* .delete-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
-}
+} */
 .delete-company-id{
   padding: 10px 10px 10px 0px;
-  margin-left: 300px;
+  margin-top: 30px;
+  margin-left: 70px;
 }
 .delete-form-container{
-  background-color: aqua;
-  width: 700px;
-  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 350px;
+  width: 50vw;
+  height: 40vh;
   border-radius: 5px;
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 30vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .delete-button>input{
-border: none;
-background-color: black;
-color: white;
-width: 100px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-border-radius: 5px;
-margin-left: 400px;
-margin-top: 50px;
+  border: none;
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 40px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 30px;
+ margin-top: 30px;
+ margin-left: 400px;
+ position: absolute;
 }
 .delete-button>input:hover{
   background-color: white;

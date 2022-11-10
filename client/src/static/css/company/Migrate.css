@@ -1,28 +1,32 @@
-.migrate-container{
+/* .migrate-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
+} */
+.migrate-email-id,.migrate-company-id{
+  margin-top: 10px;
+  margin-left: 20px;
 }
-.migrate-email-id,.migrate-button{
+/* .migrate-company-id,.migrate-button{
   padding: 20px 20px 0px 0px ;
-}
-.migrate-company-id,.migrate-button{
-  padding: 20px 20px 0px 0px ;
-}
+} */
 .migrate-form-container1{
-  background-color: aqua;
-width: 400px;
-height: 300px;
-margin-left: 80px;
-border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top:100px;
+  margin-left:  90px;
+  width: 43vw;
+  height: 30vh;
+  border-radius: 5px;
 }
 .migrate-form-container2{
-  background-color: aqua;
-  margin-left: 300px;
-  width: 400px;
-  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-left:680px;
+  margin-top:100px;
+  width: 42vw;
+  height: 30vh;
   border-radius: 5px;
 }
 
@@ -33,8 +37,9 @@ border-radius: 5px;
   color: white;
   padding: 10px;
   width: 100px;
-  margin-left: 90px;
-  border-radius: 10px;
+  margin-left: 280px;
+  margin-top: 40px;
+  border-radius: 30px;
 }
 .migrate-button>input:hover{
   background-color: white;
@@ -42,21 +47,40 @@ border-radius: 5px;
   border: 1px solid black;
   cursor: pointer;
 }
-.migrate-email-id{
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 0px;
+  width: 20vw;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
+/* .migrate-email-id{
   margin-left: 20px;
 }
 
 .migrate-company-id{
   margin-left: 20px;
-}
+} */
 
 .migrate-delete-button{
   margin-top:450px;
-  margin-left:-725px;
+  margin-left:500px;
+  padding-bottom: 15px;
+  padding-right: 20px;
   border:1px solid white;
   background-color:black;
-  width:200px;
-  border-radius:10px;
+  border-radius:30px;
 }
 .migrate-delete-button:hover{
   border:1px solid white;
@@ -73,5 +97,5 @@ border-radius: 5px;
   padding: 10px;
   width: 100px;
   margin-left: 90px;
-  border-radius: 10px;
+  border-radius: 30px;
 }

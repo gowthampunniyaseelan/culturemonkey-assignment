@@ -83,7 +83,7 @@ export default function UpdateCompany() {
 <Navbar/>
 <div className="update-container">
   <form onSubmit={postThedetails} className="update-form-container">
-  <h3 style={{fontWeight:100}}>Update company details</h3>
+  <h3>Update company details</h3>
   <div className="update-company-id">
     <label htmlFor="name">Company ID </label>
     <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />
@@ -96,9 +96,9 @@ export default function UpdateCompany() {
    <label htmlFor="address">Company Address </label>
    <input type="text" value={company_address} onChange={(e)=>setAddress(e.target.value)} />
   </div>
-  <div className="update-coordinates">
+  {/* <div className="update-coordinates">
     <label htmlFor="coordinates">Coordinates </label>
-  </div>
+  </div> */}
   <div className="update-latitude">
     <label htmlFor="latitude">Latitude </label>
     <input type="text" value={latitude} onChange={(e)=>setLatitude(e.target.value)}/>

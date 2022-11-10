@@ -16,7 +16,7 @@ export default function Home() {
       if(result.data){
         const {data} = result
         alert(data.message)
-        // window.localStorage.setItem("emailId",emailId)
+        window.localStorage.setItem("emailId",emailId)
         setNavigate(true)
       }
     }).catch((err)=>{

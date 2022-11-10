@@ -144,7 +144,7 @@ export default function UpdateUser() {
   <Navbar/>   
   <div className="update-user-container">
     <form onSubmit={updateUserDetails} className="update-user-form-container">
-    <h3 style={{marginLeft:0,fontWeight:700}}>Update User Details</h3>
+    <h3 style={{marginLeft:20}}>Update User Details</h3>
     <div className="update-user-email-id">
     <label htmlFor="name">Email ID </label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required />

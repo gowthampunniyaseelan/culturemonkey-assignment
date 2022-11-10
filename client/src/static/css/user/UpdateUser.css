@@ -1,34 +1,67 @@
-.update-user-container{
+/* .update-user-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
-}
-.update-user-email-id,.update-user-first-name,.update-user-last-name,.update-user-email,.update-user-active,.update-user-designation,.update-user-dob,.update-user-button{
+} */
+/* .update-user-email-id,.update-user-first-name,.update-user-last-name,.update-user-email,.update-user-active,.update-user-designation,.update-user-dob,.update-user-button{
   padding: 20px 20px 0px 0px ;
   font-weight: 100;
   margin-left: 300px;
-}
+} */
 .update-user-form-container{
-  background-color: aqua;
-  padding: 20px;
-  width: 900px;
-  height: 400px;
-  border-radius: 10px;
-  margin-left: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
   margin-top: 20px;
+  margin-left: 150px;
+  width: 80vw;
+  height: 90vh;
+  border-radius: 5px;
+}
+.update-user-email-id{
+  margin-top: 20px;
+  margin-left: 150px;
+  position: absolute;
+}
+.update-user-first-name{
+  margin-top: 80px;
+  margin-left: 150px;
+  position: absolute;
+}
+.update-user-last-name{
+  margin-top: 140px;
+  margin-left: 150px;
+  position: absolute;
+}
+.update-user-designation{
+  margin-top: 200px;
+  margin-left: 150px;
+  position: absolute;
+}
+.update-user-dob{
+  margin-top: 260px;
+  margin-left: 150px;
+  position: absolute;
+}
+.update-user-active{
+  margin-top: 320px;
+  margin-left: 150px;
   position: absolute;
 }
 .update-user-button>input{
   border: none;
   background-color: black;
-  border: 1px solid black;
   color: white;
-  padding: 10px;
-  width: 100px;
-  margin-left: 90px;
-  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 30px;
+ margin-top: 380px;
+ margin-left: 600px;
+ position: absolute;
 }
 .update-user-button>input:hover{
   background-color: white;

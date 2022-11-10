@@ -1,31 +1,65 @@
-.add-container{
+/* .add-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
-}
-.add-company-id,.add-first-name,.add-last-name,.add-email,.add-designation,.add-dob,.add-button{
+} */
+/* .add-company-id,.add-first-name,.add-last-name,.add-email,.add-designation,.add-dob,.add-button{
   padding: 10px 10px 10px 0px;
   margin-left: 250px;
-}
+} */
 .add-form-container{
-  background-color: aqua;
-  width: 800px;
-  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 150px;
+  width: 80vw;
+  height: 90vh;
   border-radius: 5px;
+}
+.add-company-id{
+  margin-top: 10px;
+  margin-left: 150px;
+  position: absolute;
+}
+.add-first-name{
+  margin-top: 70px;
+  margin-left: 150px;
+  position: absolute;
+}
+.add-last-name{
+  margin-top: 130px;
+  margin-left: 150px;
+  position: absolute;
+}
+.add-email{
+  margin-top: 190px;
+  margin-left: 150px;
+  position: absolute;
+}
+.add-designation{
+  margin-top: 250px;
+  margin-left: 150px;
+  position: absolute;
+}
+.add-dob{
+  margin-top: 310px;
+  margin-left: 150px;
+  position: absolute;
 }
 .add-button>input{
   border: none;
   background-color: black;
   color: white;
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   display: flex;
  align-items: center;
  justify-content: center;
  cursor: pointer;
- border-radius: 5px;
+ border-radius: 30px;
+ margin-top: 380px;
+ margin-left: 700px;
  position: absolute;
 }
 .add-button>input:hover{

@@ -43,7 +43,7 @@ function AddUser(){
 <Navbar/>
 <div className="add-container">
   <form onSubmit={postUserdetails} className="add-form-container">
-    <h3 style={{marginLeft:30,fontWeight:700,marginTop:10}}>Add a User</h3>
+    <h3 style={{marginLeft:30,marginTop:10}}>Add User</h3>
     <div className="add-company-id">
       <label htmlFor="name">Company ID </label>
       <input type="text" value={company_id} onChange={(e)=>setCompanyId(e.target.value)} required />

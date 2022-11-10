@@ -1,52 +1,78 @@
-.get-user-container{
+/* .get-user-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
-}
-.get-user-email-id,.get-user-button{
+} */
+/* .get-user-email-id,.get-user-button{
   padding: 20px 20px 0px 0px ;
-}
+} */
 .get-user-form-container{
-  background-color: aqua;
-  width: 1000px;
-  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top:5vh;
+  margin-left: 350px;
+  width: 50vw;
+  height: 30vh;
   border-radius: 5px;
 }
 .get-user-form-container>h3{
   margin-left: 20px;
+  margin-top: 10px;
 }
+.get-user-email-id{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 30vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .get-user-button>input{
   border: none;
   background-color: black;
   color: white;
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   display: flex;
-  margin-left: 200px;
- align-items: center;
- justify-content: center;
- cursor: pointer;
- border-radius: 5px;
- position: absolute;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-left: 400px;
+  position: absolute;
 }
 .get-user-button>input:hover{
   background-color: white;
   color: black;
 }
 .get-user-show-details{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: absolute;
-  margin-left: 400px;
-  background-color: white;
-  width: 500px;
-  height: 150px;
+  margin-top:40vh;
+  margin-left: 350px;
+  width: 50vw;
+  height: 52vh;
+  border-radius: 5px;
 }
 .get-user-show-first-name,.get-user-show-last-name,.get-user-show-email,.get-user-show-designation,.get-user-show-dob,.get-user-show-active{
-  font-size: 12px;
-  font-weight: 100;
-}
-.get-user-show-first-name,.get-user-show-last-name,.get-user-show-email,.get-user-show-designation,.get-user-show-dob,.get-user-show-active{
-  margin-top: 20px;
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 10px;
   margin-left: 10px;
 }

@@ -1,19 +1,39 @@
-.container{
+/* .container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
 }
 .email-id,.button{
   padding: 20px 20px 0px 0px ;
-}
+} */
 .form-container{
-  background-color: aqua;
-  width: 1000px;
-  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 170px;
+  width: 50vw;
+  height: 50vh;
   border-radius: 5px;
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 30vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .form-container>h3{
  margin-left: 160px;
 }
@@ -24,8 +44,9 @@
   color: white;
   padding: 10px;
   width: 100px;
+  margin-top: 50px;
   margin-left: 330px;
-  border-radius: 5px;
+  border-radius: 30px;
 }
 .button>input:hover{
   background-color: white;
@@ -35,12 +56,15 @@
 }
 
 .navigation-link{
-  margin-top: 250px;
-  margin-left: 850px;
+  margin-top: 450px;
+  margin-left: 920px;
   position: absolute;
 }
 .username,.email-id{
-  margin-left: 370px;
+  margin-left: 80px;
+}
+.email-id{
+  margin-top: 40px;
 }
 .button{
   margin-left: 110px;

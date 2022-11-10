@@ -1,19 +1,39 @@
-.login-container{
+/* .login-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   height: 100vh;
 }
 .login-email-id,.login-button{
   padding: 20px 20px 0px 0px ;
-}
+} */
 .login-form-container{
-  background-color: aqua;
-  width: 1000px;
-  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 300px;
+  width: 50vw;
+  height: 40vh;
   border-radius: 5px;
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 30vw;
+  position: absolute;
+  margin-top: 0px;
+  padding: 3px;
+  /* padding: 0; */
+  margin-left: 20px;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  input:hover{
+    box-shadow: 0 0 5px 0 #095484;
+  }
 .login-form-container>h3{
  margin-left: 60px;
 }
@@ -25,7 +45,8 @@
   padding: 10px;
   width: 100px;
   margin-left: 90px;
-  border-radius: 5px;
+  margin-top: 50px;
+  border-radius: 30px;
 }
 .login-button>input:hover{
   background-color: white;
@@ -35,13 +56,13 @@
 }
 
 .login-navigation-link{
-  margin-top: 250px;
-  margin-left: 850px;
+  margin-top: 400px;
+  margin-left: 1060px;
   position: absolute;
   color: black;
 }
 
 .login-email-id{
-  margin-top: 100px;
-  margin-left: 330px;
+  margin-top:80px;
+  margin-left: 60px;
 }

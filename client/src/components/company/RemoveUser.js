@@ -26,9 +26,9 @@ function RemoveUser(){
     <Navbar/>
     <div className="remove-container">
     <form onSubmit={removeUserFromCompany} className="remove-form-container">
-    <h3 style={{fontWeight:100}}>Remove the user</h3>
+    <h3>Remove user</h3>
     <div className="remove-email-id">
-    <label htmlFor="email" style={{fontWeight:100}}>EmailID </label>
+    <label htmlFor="email">EmailID </label>
     <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} />
     </div>
     <div className="remove-button">

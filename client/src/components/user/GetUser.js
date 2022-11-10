@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/user/GetUser.css"
 import Navbar from "../nav/Navbar";
+import moment from "moment"
 function GetUser(){
   const[userId,setUserId] = useState("")
   const[showFirstName,setShowFirstName] = useState([])
@@ -46,9 +47,9 @@ function GetUser(){
   <Navbar/>
     <div className="get-user-container">
     <form onSubmit={getUserdetails}  className="get-user-form-container">
-    <h3 style={{fontWeight:100}}>Get the user</h3>
+    <h3>Get user</h3>
     <div className="get-user-email-id">
-    <label htmlFor="email" style={{fontWeight:100,marginLeft:20}}>User Email ID </label>
+    <label htmlFor="email">User Email ID </label>
     <input type="email" value={userId} onChange={(e)=>setUserId(e.target.value)} />
     </div>  
     <div className="get-user-button">
@@ -56,17 +57,12 @@ function GetUser(){
     </div>
     </form>
     <div className="get-user-show-details">
-    <p className="get-user-show-first-name">First Name - {showFirstName}</p>
-    <hr />
-    <p className="get-user-show-last-name">Last Name - {showLastName}</p>
-    <hr />
-    <p className="get-user-show-email">Email - {showEmail}</p>
-    <hr />
-    <p className="get-user-show-designation">Designation - {showDesignation}</p>
-    <hr />
-    <p className="get-user-show-dob">D-O-B - {showDateOfBirth}</p>
-    <hr />
-    <p className="get-user-show-active">Active - {String(showActive)}</p>
+    <p className="get-user-show-first-name">First Name : <span style={{fontWeight:"bold"}}>{showFirstName}</span></p>
+    <p className="get-user-show-last-name">Last Name : <span style={{fontWeight:"bold"}}>{showLastName}</span></p>
+    <p className="get-user-show-email">Email : <span style={{fontWeight:"bold"}}>{showEmail}</span></p>
+    <p className="get-user-show-designation">Designation : <span style={{fontWeight:"bold"}}>{showDesignation}</span></p>
+    <p className="get-user-show-dob">D-O-B : <span style={{fontWeight:"bold"}}>{showDateOfBirth}</span></p>
+    <p className="get-user-show-active">Active : <span style={{fontWeight:"bold"}}>{String(showActive)}</span></p>
     </div> 
     </div>
     </>

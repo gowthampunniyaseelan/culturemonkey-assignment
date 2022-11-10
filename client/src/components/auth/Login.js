@@ -1,22 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import {Link,Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import "../../static/css/auth/Login.css"
 export default function Login() {
   const[emailId,setEmailId] = useState("");
-  const[localStorage,setLocalStorage] = useState("")
+  const Navigate = useNavigate();
   async function getUserDetails(e){
     e.preventDefault()
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
       console.log(result);
-        const {data} = result
-       window.localStorage.setItem("emailId",data.email) 
-        setTimeout(()=>{
-        setLocalStorage(window.localStorage.getItem("emailId"))
-        alert("Login Successful")
-       },2000)
-        // setNavigate(true)
+      const {data} = result
+       window.localStorage.setItem("emailId",data.username)
+       window.localStorage.setItem("emailId",data.email)
+       Navigate("/create-company")
     }).catch((err)=>{
       console.log(err);
       const {response} = err
@@ -26,9 +23,6 @@ export default function Login() {
   }
   return (
   <div className='login-container'>
-  {localStorage ? 
-    <Navigate to="/create-company"/> : null
-  }
    <form onSubmit={getUserDetails} className="login-form-container">
    <div className='login-email-id'>
    <label htmlFor="name">Email ID </label>

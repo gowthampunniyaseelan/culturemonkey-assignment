@@ -95,23 +95,15 @@ function deleteUser(){
       <Navbar/>
    
     <div className="migrate-container">
-    <div style={{
-      backgroundColor:"white",
-      position:"absolute",
-      marginTop:-400,
-      width:300,
-      borderRadius:10,
-      height:30
-    }}>
     <h3 style={{
-      marginTop:1,
-      marginLeft:100
+      marginLeft:580,
+      position:"absolute",
+      color:"black",
     }}>Migration</h3>
-    </div>
    
     <form onSubmit={getUserdetails} className="migrate-form-container1">
     <p style={{
-      marginLeft:20
+      marginLeft:10
     }}>Enter the email Id to get the user</p>
     <div className="migrate-email-id">
     <label htmlFor="email">User Email ID </label>
@@ -127,7 +119,7 @@ function deleteUser(){
     
     <form onSubmit={getThedetails} className="migrate-form-container2">
     <p style={{
-      marginLeft:20
+      marginLeft:10
     }}>Enter company Id to migrate the user</p>
     <div className="migrate-company-id">
     <label htmlFor="companyName">CompanyID </label>
@@ -142,14 +134,10 @@ function deleteUser(){
       }
       
     </form>
-<div>
 {
-  togglefordeletebutton ? <button className="migrate-delete-button" disabled={togglefordeletebutton} onClick={deleteUser} style={{opacity:0.4,backgroundColor:"white",color:"black"}}>Delete the duplicate user</button> 
+  togglefordeletebutton ? <button className="migrate-delete-button" disabled={togglefordeletebutton} onClick={deleteUser} style={{opacity:0.4,backgroundColor:"black",color:"white"}}>Delete the duplicate user</button> 
   : <button className="migrate-delete-button" onClick={deleteUser}>Delete the duplicate user</button>
-}
-
-</div>
-    
+} 
     </div>
     </>
 )}

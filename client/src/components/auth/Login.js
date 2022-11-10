@@ -13,6 +13,8 @@ export default function Login() {
       const {data} = result
        window.localStorage.setItem("emailId",data.email)
        window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
        Navigate("/create-company")
     }).catch((err)=>{
       console.log(err);

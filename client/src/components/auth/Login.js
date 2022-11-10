@@ -9,8 +9,22 @@ export default function Login() {
   async function getUserDetails(e){
     e.preventDefault()
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
-      console.log(result);
       const {data} = result
+      if(window.localStorage.getItem("emailId")){
+        Navigate("/create-company")
+      }
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
+       window.localStorage.setItem("emailId",data.email)
        window.localStorage.setItem("emailId",data.email)
        window.localStorage.setItem("emailId",data.email)
        window.localStorage.setItem("emailId",data.email)

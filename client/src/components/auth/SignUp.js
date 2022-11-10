@@ -1,24 +1,35 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import {Link,Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import "../../static/css/auth/Signup.css"
 export default function Home() {
   const[emailId,setEmailId] = useState("");
   const[userName,setUserName] = useState("");
-  const[navigate,setNavigate] = useState(false)
+  const Navigate = useNavigate();
   async function storeUserDetails(e){
     e.preventDefault()
     await axios.post("/user-management/users",{
       username:userName,
       email:emailId
-    }).then((result)=>{
-      if(result.data){
-        const {data} = result
-        alert(data.message)
-        window.localStorage.setItem("emailId",emailId)
-        setNavigate(true)
-      }
+    }).then(()=>{
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      window.localStorage.setItem("emailId",emailId)
+      Navigate("/login")
     }).catch((err)=>{
       const {response} = err
       const {data} = response
@@ -27,9 +38,6 @@ export default function Home() {
   }
   return (
   <div className='container'>
-  {navigate ? 
-    <Navigate to="/login"/> : null
-  }
    <form onSubmit={storeUserDetails} className="form-container">
    <div className='username'>
    <label htmlFor="name">Username </label>

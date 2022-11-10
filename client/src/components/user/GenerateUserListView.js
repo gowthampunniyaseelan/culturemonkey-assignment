@@ -33,33 +33,33 @@ function GenerateUserListView(){
       <div class="user-col user-col-6">Active</div>
     </li>
     {
-        showUser.map(show=>(
-        <li class="table-row" key={show.users.map((value)=>(
+      showUser.map(show=>(
+        <li key={show.users.map((value)=>(
             value.email
         ))}>
        
         <div>{show.users.map((value)=>(
-            <li>{value.first_name}</li>
+            <li class="table-row">{value.first_name}</li>
         ))}</div>
 
         <div>{show.users.map((value)=>(
-            <li>{value.last_name}</li>
+            <li class="table-row">{value.last_name}</li>
         ))}</div>
 
         <div>{show.users.map((value)=>(
-            <li>{value.email}</li>
+            <li class="table-row">{value.email}</li>
         ))}</div>
 
         <div>{show.users.map((value)=>(
-            <li>{value.designation}</li>
+            <li class="table-row">{value.designation}</li>
         ))}</div>
 
         <div>{show.users.map((value)=>(
-            <li>{moment(value.date_of_birth).format("YYYY-MM-DD")}</li>
+            <li class="table-row">{moment(value.date_of_birth).format("YYYY-MM-DD")}</li>
         ))}</div>
 
         <div>{show.users.map((value)=>(
-            <li>{String(value.active)}</li>  
+            <li class="table-row">{String(value.active)}</li>  
         ))}</div>
         </li>
       ))}

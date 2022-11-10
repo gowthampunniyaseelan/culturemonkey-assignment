@@ -84,9 +84,9 @@ input{
 }
 .migrate-delete-button:hover{
   border:1px solid white;
-  background-color:black;
+  background-color:white;
   cursor:pointer;
-  color: white;
+  color: black;
 }
 
 .migrate-button1>input{

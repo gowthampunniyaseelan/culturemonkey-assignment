@@ -11,7 +11,7 @@ export default function Login() {
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
       console.log(result);
       const {data} = result
-       window.localStorage.setItem("emailId",data.username)
+       window.localStorage.setItem("emailId",data.email)
        window.localStorage.setItem("emailId",data.email)
        Navigate("/create-company")
     }).catch((err)=>{

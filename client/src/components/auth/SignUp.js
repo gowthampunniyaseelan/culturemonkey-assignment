@@ -13,22 +13,6 @@ export default function Home() {
       username:userName,
       email:emailId
     }).then(()=>{
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
-      window.localStorage.setItem("emailId",emailId)
       Navigate("/login")
     }).catch((err)=>{
       const {response} = err

@@ -1,35 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import {useNavigate} from 'react-router-dom';
 import "../../static/css/auth/Login.css"
 export default function Login() {
   const[emailId,setEmailId] = useState("");
-  const Navigate = useNavigate();
   async function getUserDetails(e){
     e.preventDefault()
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
       const {data} = result
-      if(window.localStorage.getItem("emailId")){
-        Navigate("/create-company")
-      }
        window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       window.localStorage.setItem("emailId",data.email)
-       Navigate("/create-company")
+       window.location.href= "/create-company"
     }).catch((err)=>{
       console.log(err);
       const {response} = err

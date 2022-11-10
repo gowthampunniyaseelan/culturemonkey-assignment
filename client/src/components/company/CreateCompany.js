@@ -2,6 +2,8 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/CreateCompany.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function CreateCompany(){
   const[company_id,setCompanyId] = useState("")
   const[company_name,setName] = useState("")
@@ -9,7 +11,12 @@ function CreateCompany(){
   const[latitude,setLatitude] = useState("")
   const[longitude,setLongitude] = useState("")
 
-
+function notify(message){
+  toast(message)
+}
+function notifyerror(message){
+  toast.error(message)
+}
   async function postThedetails(e){
     e.preventDefault();
     setCompanyId("")
@@ -25,11 +32,11 @@ function CreateCompany(){
         coordinates:[latitude,longitude]
       }).then((result)=>{
         const {data} = result
-        alert(data.message)
+        notify(data.message)
       }).catch((err)=>{
         const {response} = err
         const{data} = response
-        alert(data.message)
+        notifyerror(data.message)
       })
     }catch(err){
       console.log(err);
@@ -72,6 +79,7 @@ function CreateCompany(){
       <input type="submit" value="Submit" />
       </div>
     </form>
+    <ToastContainer/>
     </div>
     </>
     )

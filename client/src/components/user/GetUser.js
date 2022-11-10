@@ -3,6 +3,8 @@ import {useState} from "react"
 import "../../static/css/user/GetUser.css"
 import Navbar from "../nav/Navbar";
 import moment from "moment"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function GetUser(){
   const[userId,setUserId] = useState("")
   const[showFirstName,setShowFirstName] = useState([])
@@ -11,6 +13,12 @@ function GetUser(){
   const[showDesignation,setShowDesignation] = useState([])
   const[showDateOfBirth,setShowDateOfBirth] = useState([])
   const[showActive,setShowActive] = useState([])
+  function notify(){
+    toast("Success")
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function getUserdetails(e){
     e.preventDefault();
     setUserId("")
@@ -22,12 +30,12 @@ function GetUser(){
         data.users.map((value)=>(
           storeDetails(value)
         ))   
-       alert("success")
+       notify()
        }
      }).catch((err)=>{
       console.log(err);
       const {response}  = err
-      alert(response.data.message)
+      notifyerror(response.data.message)
      })
     }catch(err){
       console.log(err);
@@ -64,6 +72,7 @@ function GetUser(){
     <p className="get-user-show-dob">D-O-B : <span style={{fontWeight:"bold"}}>{showDateOfBirth}</span></p>
     <p className="get-user-show-active">Active : <span style={{fontWeight:"bold"}}>{String(showActive)}</span></p>
     </div> 
+    <ToastContainer/>
     </div>
     </>
     )

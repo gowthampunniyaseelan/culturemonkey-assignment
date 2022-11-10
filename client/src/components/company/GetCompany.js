@@ -2,6 +2,8 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/GetCompany.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function GetCompany(){
   const[companyId,setCompanyId] = useState()
   const[showCompanyId,setShowCompanyId] = useState()
@@ -9,6 +11,12 @@ function GetCompany(){
   const[showCompanyAddress,setShowCompanyAddress] = useState()
   const[showCompanyLatitude,setShowCompanyLatitude] = useState()
   const[showCompanyLongitude,setShowCompanyLongitude] = useState()
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function getThedetails(e){
     e.preventDefault();
     setCompanyId()
@@ -19,10 +27,10 @@ function GetCompany(){
         setShowCompanyAddress(result.data.company_address)
         setShowCompanyLatitude(result.data.coordinates[0])
         setShowCompanyLongitude(result.data.coordinates[1])
-        alert("Success")
+        notify("Success")
       }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
       })
     }catch(err){
       console.log(err);
@@ -51,6 +59,7 @@ function GetCompany(){
     <p className="get-show-company-longitude">Longitude : <span style={{fontWeight:"bold"}}>{showCompanyLongitude} </span></p>
     </div>
     </div>
+    <ToastContainer/>
     </>
     )
 }

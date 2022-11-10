@@ -2,6 +2,8 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/AddUser.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function AddUser(){
   const[company_id,setCompanyId] = useState(null)
   const[first_name,setFirstName] = useState(null)
@@ -10,6 +12,12 @@ function AddUser(){
   const[designation,setDesignation] = useState(null)
   const[date_of_birth,setDateOfBirth] = useState(null)
   const[active,setActive] = useState(true);
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function postUserdetails(e){
     e.preventDefault();
     setCompanyId("")
@@ -28,11 +36,11 @@ function AddUser(){
       active:active
       }).then((res)=>{
         const {data} = res
-        alert(data.message)
+        notify(data.message)
       }).catch((err)=>{
         const {response} = err
         const{data} = response
-        alert(data.message)
+        notifyerror(data.message)
       })
     }catch(err){
       console.log(err);
@@ -72,6 +80,7 @@ function AddUser(){
       <input type="submit"/>
     </div>
   </form>
+  <ToastContainer/>
 </div>
 </>
     )

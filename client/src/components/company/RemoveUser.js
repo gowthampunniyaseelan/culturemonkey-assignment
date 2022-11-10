@@ -2,18 +2,26 @@ import axios from "axios";
 import {useState} from "react"
 import "../../static/css/company/RemoveUser.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function RemoveUser(){
   const[emailId,setEmailId] = useState("")
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function removeUserFromCompany(e){
     e.preventDefault();
     setEmailId("");
     try{
       await axios.delete(`/company-management/user-management/users/${emailId}`).then((result)=>{
         const {data} = result
-        alert(data.message) 
+        notify(data.message) 
       }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
       })
     }
     catch(err){
@@ -36,6 +44,7 @@ function RemoveUser(){
     </div> 
     </form>
     </div>
+    <ToastContainer/>
     </>
     )
 }

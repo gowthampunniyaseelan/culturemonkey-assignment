@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import "../../static/css/auth/Login.css"
+import "../../static/css/auth/Login.css"  
 export default function Login() {
   const[emailId,setEmailId] = useState("");
   async function getUserDetails(e){
@@ -21,7 +21,7 @@ export default function Login() {
   <div className='login-container'>
    <form onSubmit={getUserDetails} className="login-form-container">
    <div className='login-email-id'>
-   <label htmlFor="name">Email ID </label>
+   <label htmlFor="name">Email ID</label>
    <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>
    </div>
    <div className='login-button' style={{
@@ -36,6 +36,5 @@ export default function Login() {
     }} href = "/"><span style={{color:"black",marginLeft:-550}}>New User Click Here To SignUp</span></a>
    </div>
   </div>
-  
   )
 }

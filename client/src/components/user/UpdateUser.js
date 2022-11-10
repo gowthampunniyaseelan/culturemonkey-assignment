@@ -2,6 +2,8 @@ import { useState } from 'react'
 import axios from "axios";
 import Navbar from '../nav/Navbar';
 import "../../static/css/user/UpdateUser.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function UpdateUser() {
   const[emailId,setEmailId] = useState("")
   const[first_name,setFirstName] = useState("")
@@ -11,6 +13,12 @@ export default function UpdateUser() {
   const[date_of_birth,setDateOfBirth] = useState("")
   const[active,setActive] = useState("")
 
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function updateUserDetails(e){
     e.preventDefault();
     if(first_name && emailId){
@@ -55,10 +63,10 @@ export default function UpdateUser() {
         first_name:first_name
       }).then((result)=>{
       const {data} = result
-      alert(data.message)
+      notify(data.message)
     }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
       })
     }catch(err){
       console.log(err);
@@ -70,10 +78,10 @@ export default function UpdateUser() {
           last_name:last_name
         }).then((result)=>{
           const {data} = result
-          alert(data.message)
+          notify(data.message)
         }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
         })
       }catch(err){
         console.log(err);
@@ -85,10 +93,10 @@ export default function UpdateUser() {
           email:email
         }).then((result)=>{
           const {data} = result
-          alert(data.message)
+          notify(data.message)
         }).catch((err)=>{
           const {response}  = err
-          alert(response.data.message)
+          notifyerror(response.data.message)
         })
       }catch(err){
         console.log(err);
@@ -100,10 +108,10 @@ export default function UpdateUser() {
             designation:designation
           }).then((result)=>{
           const {data} = result
-          alert(data.message)
+          notify(data.message)
           }).catch((err)=>{
             const {response}  = err
-          alert(response.data.message)
+          notifyerror(response.data.message)
           })
         }catch(err){
           console.log(err);
@@ -115,10 +123,10 @@ export default function UpdateUser() {
               date_of_birth:date_of_birth
             }).then((result)=>{
               const {data} = result
-              alert(data.message)
+              notify(data.message)
             }).catch((err)=>{
               const {response}  = err
-              alert(response.data.message)
+              notifyerror(response.data.message)
             })
           }catch(err){
             console.log(err);
@@ -130,10 +138,10 @@ export default function UpdateUser() {
                 active:active
               }).then((result)=>{
                 const {data} = result
-              alert(data.message)
+                notify(data.message)
               }).catch((err)=>{
                 const {response}  = err
-              alert(response.data.message)
+              notifyerror(response.data.message)
               })
             }catch(err){
               console.log(err);
@@ -185,6 +193,7 @@ export default function UpdateUser() {
     </div>
     </form>
   </div>
+  <ToastContainer/>
     </>
     )
 }

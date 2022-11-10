@@ -2,18 +2,26 @@ import axios from "axios";
 import {useState} from "react";
 import "../../static/css/company/DeleteCompany.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function DeleteCompany(){
   const[companyId,setCompanyId] = useState("")
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function removeUserFromCompany(e){
     e.preventDefault();
     setCompanyId("");
     try{
       await axios.delete(`/company-management/companies/${companyId}`).then((result)=>{
         const {data} = result
-        alert(data.message) 
+        notify(data.message)
       }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
       })
     }
     catch(err){
@@ -39,6 +47,7 @@ function DeleteCompany(){
     
     </form>
     </div>
+    <ToastContainer/>
     </>
     
     )

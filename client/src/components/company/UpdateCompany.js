@@ -2,6 +2,8 @@ import {useState} from 'react'
 import axios from "axios";
 import "../../static/css/company/UpdateCompany.css"
 import Navbar from '../nav/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function UpdateCompany() {
   const[company_id,setCompanyId] = useState("")
@@ -9,6 +11,13 @@ export default function UpdateCompany() {
   const[company_address,setAddress] = useState("")
   const[latitude,setLatitude] = useState("")
   const[longitude,setLongitude] = useState("")
+
+  function notify(message){
+    toast(message)
+  }
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function postThedetails(e){
     e.preventDefault();
     if(company_name && company_id){
@@ -36,10 +45,10 @@ export default function UpdateCompany() {
         company_name:company_name
       }).then((result)=>{
         const {data} = result
-        alert(data.message)
+        notify(data.message)
       }).catch((err)=>{
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
       })
     }catch(err){
      console.log(err);
@@ -51,14 +60,14 @@ export default function UpdateCompany() {
           company_address:company_address
         }).then((result)=>{
           const {data} = result
-          alert(data.message)
+          notify(data.message)
         }).catch((err)=>{
           const {response}  = err
-          alert(response.data.message)
+          notifyerror(response.data.message)
         })
       }catch(err){
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
     }
  
   }
@@ -68,14 +77,14 @@ export default function UpdateCompany() {
           coordinates:[latitude,longitude]
         }).then((result)=>{
           const {data} = result
-          alert(data.message)
+          notify(data.message)
         }).catch((err)=>{
           const {response}  = err
-          alert(response.data.message)
+          notifyerror(response.data.message)
         })
       }catch(err){
         const {response}  = err
-        alert(response.data.message)
+        notifyerror(response.data.message)
     }
   }
   return (
@@ -112,6 +121,7 @@ export default function UpdateCompany() {
     </div>
   </form>
 </div>
+<ToastContainer/>
  </>
     )
 }

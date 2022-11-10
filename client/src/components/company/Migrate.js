@@ -2,6 +2,8 @@ import { useState } from "react"
 import axios from "axios"
 import "../../static/css/company/Migrate.css"
 import Navbar from "../nav/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Migrate() {
 // Store the user Id
 const[storeId,setStoreId] = useState("");
@@ -22,6 +24,12 @@ const[storeId,setStoreId] = useState("");
   const[toggle,setToggle] = useState(true);
   const[togglefordeletebutton,setToggleForDeleteButton]=useState(true);
 
+  function notify(message){
+    toast(message)
+  }
+ function notifyerror(message){
+    toast.error(message)
+  }
   // get the user from a company
   async function getUserdetails(e){
     e.preventDefault();
@@ -33,11 +41,11 @@ const[storeId,setStoreId] = useState("");
       setToggleForDeleteButton(false)
       data.users.map((value)=>(
         storeDetails(value)
-      ))  
-      alert("Success") 
+      )) 
+      notify("Success") 
      }).catch((err)=>{
       const {response}  = err
-        alert(response.data.message)
+      notifyerror(response.data.message)
      })
     }catch(err){
       console.log(err);
@@ -66,13 +74,12 @@ const[storeId,setStoreId] = useState("");
         active:active
       }).then((result)=>{
           const {data} = result
-          alert(data.message)
-          window.location.reload();
+          notify(data.message)
           console.log(result);
       }).catch((err)=>{
         const {response} = err
         const {data} = response
-        alert(data.message)
+        notifyerror(data.message)
       })
       setCompanyId("")
     }catch(err){
@@ -83,10 +90,10 @@ function deleteUser(){
   axios.delete(`/company-management/user-management/${storeId}`).then((result)=>{
     const {data} = result
     if(data.message === "Successfully Deleted"){
-      alert(data.message)
+      notify(data.message)
       setToggle(false)
     }else{
-      alert("User Not available")
+      notifyerror("User Not available")
     } 
   })
 }
@@ -139,5 +146,6 @@ function deleteUser(){
   : <button className="migrate-delete-button" onClick={deleteUser}>Delete the duplicate user</button>
 } 
     </div>
+    <ToastContainer/>
     </>
 )}

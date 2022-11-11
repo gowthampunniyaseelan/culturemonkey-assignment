@@ -2,11 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
 import {useNavigate} from 'react-router-dom';
-import "../../static/css/auth/Signup.css"
+import "../../static/css/auth/Signup.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Home() {
   const[emailId,setEmailId] = useState("");
   const[userName,setUserName] = useState("");
   const Navigate = useNavigate();
+  function notifyerror(message){
+    toast.error(message)
+  }
   async function storeUserDetails(e){
     e.preventDefault()
     await axios.post("/user-management/users",{
@@ -17,7 +22,7 @@ export default function Home() {
     }).catch((err)=>{
       const {response} = err
       const {data} = response
-      alert(data.message)
+      notifyerror(data.message)
     })
   }
   return (
@@ -40,6 +45,7 @@ export default function Home() {
       textDecoration:"none"
     }}  href="/login"><span style={{color:"black",marginLeft:-550}}>Already have an account Login</span></a>
    </div>
+   <ToastContainer/>
   </div>
   )
 }

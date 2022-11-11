@@ -13,16 +13,22 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import LogoutIcon from '@mui/icons-material/Logout';
 import UpdateIcon from '@mui/icons-material/Update';
 import UpgradeIcon from '@mui/icons-material/Upgrade';
+import $ from "jquery"
 export default function Navbar() {
   const Navigate = useNavigate()
   function logOut(){
     window.localStorage.removeItem("emailId")
     Navigate("/login")
   }
+    $("a").on("click",()=>{
+      $("a").css("background-color","");
+      $(this).css("background-color","black")
+    })
+ 
   return (
     <div className='nav-container'>
       <nav>
-        <p><a title='Create Company' href="/create-company" style={{color:'black'}}><DomainAddIcon/></a></p>
+        <p><a  title='Create Company' href="/create-company" style={{color:'black'}}><DomainAddIcon/></a></p>
         <p><a title='Add User' href="/add-user" style={{color:'black'}}><PersonAddIcon/></a></p>
         <p><a title='Delete Company' href="/delete-company" style={{color:'black'}}><DomainDisabledIcon/></a></p>
         <p><a title='Company Details' href="/list-company" style={{color:'black'}}><BusinessIcon/></a></p>

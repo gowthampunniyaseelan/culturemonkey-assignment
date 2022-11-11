@@ -20,8 +20,12 @@ h2 {
   }
   .user-table-header {
     background-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(195,180,217,1) 0%, rgba(175,200,230,0.4602883389683998) 0%);
     font-size: 14px;
-    color: white;
+  border: 1px solid black;
+    color: black;
     text-transform: uppercase;
     /* letter-spacing: 0.03em; */
   }
@@ -33,10 +37,10 @@ h2 {
     margin-left: 20px;
   }
   .user-col-2 {
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .user-col-3 {
-    margin-left: 100px;
+    margin-left: 90px;
   }
   .user-col-4 {
     margin-left: 110px;
@@ -70,3 +74,6 @@ h2 {
       } */
     }
   }
+.table-row{
+  border: 1px solid black;
+}

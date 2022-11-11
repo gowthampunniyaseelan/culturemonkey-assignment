@@ -20,14 +20,19 @@ h2 {
   }
   .table-header {
     background-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(195,180,217,1) 0%, rgba(175,200,230,0.4602883389683998) 0%);
     font-size: 14px;
-    color: white;
+  border: 1px solid black;
+    color: black;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
   .table-row {
     background-color: #ffffff;
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  border: 1px solid black;
   }
   .col-1 {
     margin-left: 20px;

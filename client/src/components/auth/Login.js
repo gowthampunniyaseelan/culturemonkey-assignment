@@ -1,9 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import "../../static/css/auth/Login.css"  
+import "../../static/css/auth/Login.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Login() {
   const[emailId,setEmailId] = useState("");
+ function notifyerror(message){
+  toast.error(message)
+ }
   async function getUserDetails(e){
     e.preventDefault()
     await axios.get(`/user-management/users/${emailId}`).then((result)=>{
@@ -14,7 +19,7 @@ export default function Login() {
       console.log(err);
       const {response} = err
       const {data} = response
-      alert(data.message)
+      notifyerror(data.message)
     })
   }
   return (
@@ -35,6 +40,7 @@ export default function Login() {
       textDecoration:"none"
     }} href = "/"><span style={{color:"black",marginLeft:-550}}>New User Click Here To SignUp</span></a>
    </div>
+   <ToastContainer/>
   </div>
   )
 }

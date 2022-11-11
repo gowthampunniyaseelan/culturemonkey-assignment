@@ -13,7 +13,6 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import LogoutIcon from '@mui/icons-material/Logout';
 import UpdateIcon from '@mui/icons-material/Update';
 import UpgradeIcon from '@mui/icons-material/Upgrade';
-import $ from "jquery"
 export default function Navbar() {
   const Navigate = useNavigate()
   function logOut(){

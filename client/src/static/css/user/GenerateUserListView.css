@@ -15,7 +15,7 @@ h2 {
     padding: 25px 30px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0px;
+    margin-bottom: 25px;
     font-size: 14px;
   }
   .user-table-header {
@@ -27,6 +27,7 @@ h2 {
     border: 1px solid black;
     color: black;
     text-transform: uppercase;
+    margin-bottom: 25px;
     /* letter-spacing: 0.03em; */
   }
   .user-table-row {

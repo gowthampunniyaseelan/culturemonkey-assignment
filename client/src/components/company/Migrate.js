@@ -76,6 +76,7 @@ const[storeId,setStoreId] = useState("");
           const {data} = result
           notify(data.message)
           console.log(result);
+          window.location.reload();
       }).catch((err)=>{
         const {response} = err
         const {data} = response

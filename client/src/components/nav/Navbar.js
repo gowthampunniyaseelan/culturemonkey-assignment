@@ -20,11 +20,6 @@ export default function Navbar() {
     window.localStorage.removeItem("emailId")
     Navigate("/login")
   }
-    $("a").on("click",()=>{
-      $("a").css("background-color","");
-      $(this).css("background-color","black")
-    })
- 
   return (
     <div className='nav-container'>
       <nav>

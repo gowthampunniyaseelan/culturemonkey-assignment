@@ -39,9 +39,9 @@ const[storeId,setStoreId] = useState("");
      await axios.get(`company-management/user-management/${userId}`).then((result)=>{
       const {data} =  result
       setToggleForDeleteButton(false)
-      data.users.map((value)=>(
-        storeDetails(value)
-      )) 
+      
+        storeDetails(data)
+     
       notify("Success") 
      }).catch((err)=>{
       const {response}  = err
@@ -53,12 +53,17 @@ const[storeId,setStoreId] = useState("");
   }
 
   function storeDetails(value){
-    setFirstName(value.first_name)
-    setLastName(value.last_name)
-    setEmail(value.email)
-    setDesignation(value.designation)
-    setDateOfBirth(value.date_of_birth)
-    setActive(value.active)
+    value.users.map((values)=>{
+      if(values.email === userId){
+        setFirstName(values.first_name)
+        setLastName(values.last_name)
+        setEmail(values.email)
+        setDesignation(values.designation)
+        setDateOfBirth(values.date_of_birth)
+        setActive(values.active)
+      }  
+  }) 
+   
   }
 
   // put the user to the company

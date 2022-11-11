@@ -15,7 +15,7 @@ h2 {
     padding: 25px 30px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     font-size: 14px;
   }
   .user-table-header {
@@ -24,7 +24,7 @@ h2 {
     background: rgb(238,174,202);
     background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(195,180,217,1) 0%, rgba(175,200,230,0.4602883389683998) 0%);
     font-size: 14px;
-  border: 1px solid black;
+    border: 1px solid black;
     color: black;
     text-transform: uppercase;
     /* letter-spacing: 0.03em; */

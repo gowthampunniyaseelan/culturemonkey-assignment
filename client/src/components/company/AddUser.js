@@ -5,12 +5,12 @@ import Navbar from "../nav/Navbar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function AddUser(){
-  const[company_id,setCompanyId] = useState(null)
-  const[first_name,setFirstName] = useState(null)
-  const[last_name,setLastName] = useState(null)
-  const[email,setEmail] = useState(null)
-  const[designation,setDesignation] = useState(null)
-  const[date_of_birth,setDateOfBirth] = useState(null)
+  const[company_id,setCompanyId] = useState("")
+  const[first_name,setFirstName] = useState("")
+  const[last_name,setLastName] = useState("")
+  const[email,setEmail] = useState("")
+  const[designation,setDesignation] = useState("")
+  const[date_of_birth,setDateOfBirth] = useState("")
   const[active,setActive] = useState(true);
   function notify(message){
     toast(message)

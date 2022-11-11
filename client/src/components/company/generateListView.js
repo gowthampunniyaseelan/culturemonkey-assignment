@@ -22,14 +22,14 @@ function GenerateListView(){
     <>
       <Navbar/>
     <div className="container">
-    <ul class="responsive-table">
-    <li class="table-header">
-      <div class="col col-1">Company ID</div>
-      <div class="col col-2">Company Name</div>
-      <div class="col col-3">Address</div>
+    <ul className="responsive-table">
+    <li className="table-header">
+      <div className="col col-1">Company ID</div>
+      <div className="col col-2">Company Name</div>
+      <div className="col col-3">Address</div>
     </li>
     {showCompany.map(show=>(
-        <li class="table-row" key={show.company_id}>
+        <li className="table-row" key={show.company_id}>
           <div style={{
             marginLeft:50
           }} data-label="Company ID">{show.company_id}</div>

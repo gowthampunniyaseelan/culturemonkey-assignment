@@ -20,32 +20,32 @@
   border-radius: 5px;
 }
 .add-company-id{
-  margin-top: 10px;
-  margin-left: 150px;
-  position: absolute;
-}
-.add-first-name{
   margin-top: 70px;
   margin-left: 150px;
   position: absolute;
 }
-.add-last-name{
+.add-first-name{
   margin-top: 130px;
   margin-left: 150px;
   position: absolute;
 }
+.add-last-name{
+  margin-top: 200px;
+  margin-left: 150px;
+  position: absolute;
+}
 .add-email{
-  margin-top: 190px;
+  margin-top: 270px;
   margin-left: 150px;
   position: absolute;
 }
 .add-designation{
-  margin-top: 250px;
+  margin-top: 340px;
   margin-left: 150px;
   position: absolute;
 }
 .add-dob{
-  margin-top: 310px;
+  margin-top: 410px;
   margin-left: 150px;
   position: absolute;
 }
@@ -60,8 +60,8 @@
  justify-content: center;
  cursor: pointer;
  border-radius: 30px;
- margin-top: 380px;
- margin-left: 700px;
+ margin-top: 440px;
+ margin-left: 750px;
  position: absolute;
 }
 .add-button>input:hover{

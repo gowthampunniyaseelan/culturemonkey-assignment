@@ -25,6 +25,7 @@ export default function Login() {
   return (
   <div className='login-container'>
    <form onSubmit={getUserDetails} className="login-form-container">
+   <h3>Login</h3>
    <div className='login-email-id'>
    <label htmlFor="name">Email ID</label>
    <input type="email" value={emailId} onChange={(e)=>setEmailId(e.target.value)} required/>

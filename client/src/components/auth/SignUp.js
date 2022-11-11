@@ -28,6 +28,7 @@ export default function Home() {
   return (
   <div className='container'>
    <form onSubmit={storeUserDetails} className="form-container">
+   <h3>Sign Up</h3>
    <div className='username'>
    <label htmlFor="name">Username </label>
    <input type="text" value={userName} onChange={(e)=>setUserName(e.target.value)} required/>

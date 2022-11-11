@@ -21,32 +21,32 @@
   border-radius: 5px;
 }
 .update-user-email-id{
-  margin-top: 20px;
+  margin-top: 70px;
   margin-left: 150px;
   position: absolute;
 }
 .update-user-first-name{
-  margin-top: 80px;
-  margin-left: 150px;
-  position: absolute;
-}
-.update-user-last-name{
   margin-top: 140px;
   margin-left: 150px;
   position: absolute;
 }
+.update-user-last-name{
+  margin-top: 210px;
+  margin-left: 150px;
+  position: absolute;
+}
 .update-user-designation{
-  margin-top: 200px;
+  margin-top: 280px;
   margin-left: 150px;
   position: absolute;
 }
 .update-user-dob{
-  margin-top: 260px;
+  margin-top: 350px;
   margin-left: 150px;
   position: absolute;
 }
 .update-user-active{
-  margin-top: 320px;
+  margin-top: 420px;
   margin-left: 150px;
   position: absolute;
 }
@@ -61,8 +61,8 @@
  justify-content: center;
  cursor: pointer;
  border-radius: 30px;
- margin-top: 380px;
- margin-left: 600px;
+ margin-top: 450px;
+ margin-left: 700px;
  position: absolute;
 }
 .update-user-button>input:hover{

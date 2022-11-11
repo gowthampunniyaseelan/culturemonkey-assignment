@@ -103,7 +103,7 @@ function deleteUser(){
    
     <div className="migrate-container">
     <h3 style={{
-      marginLeft:580,
+      marginLeft:380,
       position:"absolute",
       color:"black",
     }}>Migration</h3>

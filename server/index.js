@@ -10,6 +10,7 @@ const port = process.env.PORT || 8080
 // DB
 const CompanyModel = require("./src/database/models/company")
 const UserModel = require("./src/database/models/user")
+
 mongoose.connect(process.env.MONGODB_URI,{
   useNewUrlParser: true,
   useUnifiedTopology: true
